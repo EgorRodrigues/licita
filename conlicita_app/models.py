@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class licitacoes(models.Model):
+class licitacao(models.Model):
     id_conlicitacao = models.IntegerField()
     orgao_uasg = models.CharField(max_length=6, null=True, blank=True)
     orgao_endereco = models.CharField(max_length=150, null=True, blank=True)

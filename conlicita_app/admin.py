@@ -1,3 +1,5 @@
 from django.contrib import admin
+from conlicita_app.models import licitacao
 
-# Register your models here.
+
+admin.site.register(licitacao)
