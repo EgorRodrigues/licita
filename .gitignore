@@ -5,3 +5,7 @@ manage.py
 
 # pycharm
 .idea/
+
+# pyhton
+ /__pycache__
+ .pyc
