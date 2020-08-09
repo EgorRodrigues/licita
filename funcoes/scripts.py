@@ -42,5 +42,7 @@ def importar_licitacoes():
             created=certame['created'],
             bidding_id=certame['bidding_id'],
             has_electronic_trading=certame['has_electronic_trading'],
+            public_body=certame['public_body']['nome'],
+            modality=certame['modality']['nome']
         ).save()
 

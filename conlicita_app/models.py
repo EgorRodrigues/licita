@@ -36,6 +36,9 @@ class licitacao(models.Model):
     # bidding_grouping =
     # phones =
     # faxes =
-    # public_body =
-    # modality =
+    public_body = models.CharField(max_length=150, null=True, blank=True)
+    modality = models.CharField(max_length=150, null=True, blank=True)
     # followups =
+
+    def __str__(self):
+        return f'{self.data_validade} - {self.orgao_uasg}'
