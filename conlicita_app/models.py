@@ -41,4 +41,4 @@ class licitacao(models.Model):
     # followups =
 
     def __str__(self):
-        return f'{self.data_validade} - {self.orgao_uasg}'
+        return f'{self.data_validade.strftime("%d/%m/%Y")} - {self.public_body} | {self.modality}'
