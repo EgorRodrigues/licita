@@ -61,7 +61,7 @@ class empresa(models.Model):
     abertura = models.DateField(null=True, blank=True)
     capital_social = models.DecimalField(max_digits=11, decimal_places=2, null=True, blank=True)
     # sócios =
-    segmento = models.TextField()
+    segmento = models.TextField(null=True, blank=True)
 
 
     def __str__(self):
