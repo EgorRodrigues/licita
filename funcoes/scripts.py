@@ -1,16 +1,21 @@
+from datetime import datetime
 from json import load
+from decimal import Decimal
 
 from conlicita_app.models import licitacao
+from conlicita_app.models import empresa
 
 
-def abrir_json():
-    with open('./funcoes/json/Acompanhamento.json', 'r', encoding='UTF-8') as file_data:
+def abrir_json(arquivo):
+    with open(arquivo, 'r', encoding='UTF-8') as file_data:
         data = load(file_data)
     return data
 
 
 def importar_licitacoes():
-    certames = abrir_json()
+    arquivo = './funcoes/json/Acompanhamento.json'
+    certames = abrir_json(arquivo)
+
     for certame in certames:
         licitacao(
             id_conlicitacao=certame['id'],
@@ -46,3 +51,26 @@ def importar_licitacoes():
             modality=certame['modality']['nome']
         ).save()
 
+
+def importar_empresas():
+    arquivo = './funcoes/json/Empresas.json'
+    file_data = abrir_json(arquivo=arquivo)
+
+    for key in list(file_data.keys()):
+        empresa(
+            razao_social=file_data[key]['Razão Social'],
+            cnpj=file_data[key]['CNPJ'].replace('.','').replace('/','').replace('-',''),
+            endereco=file_data[key]['Endereço'],
+            cidade=file_data[key]['Cidade'],
+            estado=file_data[key]['Estado'],
+            telefone=file_data[key]['Telefone'],
+            email=file_data[key]['E-Mail'],
+            situacao=file_data[key]['Situação'],
+            tipo=file_data[key]['Tipo'],
+            natureza=file_data[key]['Natureza'],
+            abertura=datetime.strptime(file_data[key]['Abertura'], '%d/%m/%Y').date(),
+            capital_social=Decimal(
+                file_data[key]['Capital Social'].replace('R$', '').replace('.','').replace(',','.')
+            ),
+            segmento=file_data[key]['Segmentos'],
+        ).save()

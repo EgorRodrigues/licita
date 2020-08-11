@@ -1,7 +1,7 @@
 from django.db import models
 
-# Create your models here.
 
+# todo Inserir os campos multiplos
 class licitacao(models.Model):
     id_conlicitacao = models.IntegerField()
     orgao_uasg = models.CharField(max_length=6, null=True, blank=True)
@@ -47,13 +47,14 @@ class licitacao(models.Model):
         return f'{self.data_validade.strftime("%d/%m/%Y")} - {self.public_body} | {self.modality}'
 
 
+# todo Inserir campos relacionados como Sócios
 class empresa(models.Model):
     razao_social = models.CharField(max_length=150)
     cnpj = models.IntegerField()
     endereco = models.CharField(max_length=150, null=True, blank=True)
     cidade = models.CharField(max_length=50, null=True, blank=True)
     estado = models.CharField(max_length=2, null=True, blank=True)
-    # telefone =
+    telefone = models.CharField(max_length=15, null=True, blank=True)
     email = models.EmailField(max_length=254, null=True, blank=True)
     situacao = models.CharField(max_length=20, null=True, blank=True)
     tipo = models.CharField(max_length=20, null=True, blank=True)
@@ -63,7 +64,8 @@ class empresa(models.Model):
     # sócios =
     segmento = models.TextField(null=True, blank=True)
 
+    class Meta:
+        unique_together = ['cnpj']
 
     def __str__(self):
         return f'{self.cnpj} - {self.razao_social}'
-
