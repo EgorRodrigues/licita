@@ -42,6 +42,7 @@ class licitacao(models.Model):
 
     class Meta:
         verbose_name_plural = 'licitações'
+        ordering = ['data_validade']
 
     def __str__(self):
         return f'{self.data_validade.strftime("%d/%m/%Y")} - {self.public_body} | {self.modality}'
@@ -63,6 +64,7 @@ class empresa(models.Model):
     capital_social = models.DecimalField(max_digits=11, decimal_places=2, null=True, blank=True)
     # sócios =
     segmento = models.TextField(null=True, blank=True)
+    # my_bidding = models.ManyToManyField(licitacao)
 
     class Meta:
         unique_together = ['cnpj']

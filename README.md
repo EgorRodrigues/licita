@@ -16,7 +16,13 @@ essas licitaçõe serão cadastradas no banco de dados para avaliação
 
 * A listagem de licitação devará possuir filtros por data, preço e status
 
-* 
+* Criar 5 listagens de licitações de acordo com o seu status:
+    * Listagem completa das licitações;
+    * Listagem das Licitações Selecionadas (Escolhidas para Analise mais detalhada);
+    * Listagem das licitações descartadas ( Licitações que em uma fase anterior foram Selecionadas);
+    * Listagem das licitações p/ Acompanhamento (são as licitações que foram descartadas, porem há o interrese de acompanhar as proximas etapas);
+    * Listagem das licitações que irão participar (Licitações escolhidas e aprovadas para participação, nessas haverá compos para upload de documentos de participação)
+    
 
 #### 1º Passo:
 
@@ -25,3 +31,7 @@ Capturar as informações das licitações e criar um Json para porteriomente po
 #### 2º Passo:
 
 * Criar os models para armazenar as informações, e organizar as empresas
+
+### 3º Passo:
+
+* Criar o relacinamento entre as empresas e as licitações, e criar o painel de configuração das licitações.
