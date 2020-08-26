@@ -39,6 +39,7 @@ class licitacao(models.Model):
     public_body = models.CharField(max_length=150, null=True, blank=True)
     modality = models.CharField(max_length=150, null=True, blank=True)
     # followups =
+    arquivo_edital = models.FileField(null=True, blank=True)
 
     class Meta:
         verbose_name_plural = 'licitações'

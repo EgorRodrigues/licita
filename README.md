@@ -10,9 +10,7 @@ essas licitaçõe serão cadastradas no banco de dados para avaliação
 
 * Cada Licitação terá dois Campos de Observação, um concernente a Habilitação e o Outro a Proposta
 
-* Cada observação terá um checkbox do tipo Null, True e False
-
-* Ao final uma caixa de seleção de status, que poderá ser gerenciada por botões, que informarão se a licitação foi Descartada, Aprovada (para Participar) ou em Obsevação
+* Ao final uma caixa de seleção de status, que poderá ser gerenciada por botões, que informarão se a licitação foi Descartada, Aprovada (para Participar) ou em Obsevação, e o default será Não Avaliado
 
 * A listagem de licitação devará possuir filtros por data, preço e status
 
@@ -26,7 +24,7 @@ essas licitaçõe serão cadastradas no banco de dados para avaliação
 
 #### 1º Passo:
 
-Capturar as informações das licitações e criar um Json para porteriomente popular o banco de dados e 
+* Capturar as informações das licitações e criar um Json para porteriomente popular o banco de dados e 
 
 #### 2º Passo:
 
