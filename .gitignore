@@ -9,3 +9,7 @@ manage.py
 # pyhton
 /__pycache__/
 *.pyc
+
+# Sistama
+/arquivos/
+*.pdf
