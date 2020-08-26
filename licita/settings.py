@@ -127,3 +127,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'static'),
 ]
+
+MEDIA_URL = '/arquivos/'
+MEDIA_ROOT = '/conlicita_app/arquivos/'
