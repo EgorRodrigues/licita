@@ -10,7 +10,7 @@ class licitacao(models.Model):
     orgao_estado = models.CharField(max_length=2, null=True, blank=True)
     orgao_cep = models.CharField(max_length=9, null=True, blank=True)
     edital = models.CharField(max_length=20, null=True, blank=True)
-    edital_site = models.CharField(max_length=255, null=True, blank=True)
+    edital_site = models.URLField(max_length=255, null=True, blank=True)
     edital_homepage = models.CharField(max_length=255, null=True, blank=True)
     edital_homepage2 = models.CharField(max_length=255, null=True, blank=True)
     edital_preco = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)

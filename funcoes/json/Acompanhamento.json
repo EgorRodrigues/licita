@@ -1,562 +1,59 @@
 [
     {
-        "id": 12965295,
+        "id": 12859757,
         "orgao_uasg": "",
-        "orgao_endereco": "Rua Cônego João Coutinho, 628 - Centro",
-        "orgao_cidade": "Pocinhos",
-        "orgao_estado": "PB",
-        "orgao_cep": "",
-        "edital": "TP/3/2020",
-        "edital_site": "",
-        "edital_homepage1": "http://www.pocinhos.pb.gov.br",
-        "edital_homepage2": "",
-        "edital_preco": 0.0,
-        "edital_tem": true,
-        "edital_status_id": 3,
-        "email": "pocinhoscpl.pregoeiro@gmail.com",
-        "processo": "",
-        "valor_estimado": 0.0,
-        "itens": "",
-        "datahora_prazo": "2020-09-08T09:30:00.000-03:00",
-        "datahora_abertura": null,
-        "datahora_retirada": null,
-        "datahora_visita": null,
-        "datahora_documento": null,
-        "data_validade": "2020-09-08",
-        "objeto": "Contratação de empresa especializada para realização dos serviços Urbanístico do Açude de Pocinhos.",
-        "observacao": "Recursos: previstos no orçamento vigente. Fundamento  legal: Lei Federal nº 8.666/93; Lei Complementar nº 123/06; e  legislação pertinente, consideradas as alterações posteriores das  referidas normas. Informações: no horário das 08:00 as 14:00 horas  dos dias úteis, no endereço supracitado. E-mail:  cplpocinhos@gmail.com.Edital: www.tce.pb.gov.br.",
-        "modified": "2020-08-24T17:38:05.000-03:00",
-        "created": "2020-08-20T11:21:41.000-03:00",
-        "bidding_id": 12965295,
-        "edicts": [
-            {
-                "filename": "edital.zip",
-                "url": "/boletim_web/public/licitacoes/12965295/arquivos/edital.zip"
-            }
-        ],
-        "has_electronic_trading": false,
-        "bidding_grouping": {
-            "descricao": "NOVA"
-        },
-        "phones": [
-            {
-                "ddd": "83",
-                "telefone": "3384-1247",
-                "ramal": ""
-            }
-        ],
-        "faxes": [],
-        "public_body": {
-            "nome": "Prefeitura Municipal de Pocinhos"
-        },
-        "modality": {
-            "nome": "Tomada de Preço"
-        },
-        "followups": []
-    },
-    {
-        "id": 12946943,
-        "orgao_uasg": "982573",
-        "orgao_endereco": "Praça Araujo Sobrinho Sn - Centro",
-        "orgao_cidade": "São Lourenço da Mata",
+        "orgao_endereco": "Rua José Plech Fernandes, 115  - Térreo Centro",
+        "orgao_cidade": "Cabo de Santo Agostinho",
         "orgao_estado": "PE",
         "orgao_cep": "",
-        "edital": "PE/28/2020",
-        "edital_site": "www.comprasnet.gov.br",
-        "edital_homepage1": "",
-        "edital_homepage2": "",
-        "edital_preco": 0.0,
-        "edital_tem": false,
-        "edital_status_id": 0,
-        "email": "",
-        "processo": "037/2020",
-        "valor_estimado": 0.0,
-        "itens": "----------------------------------------  Itens de Serviços  ----------------------------------------  1 - Serviço Engenharia  Serviço engenharia - Prestação de Serviços de Substituição de luminárias e Lâmpadas atuais por Sistema de Iluminação em Led, na rede de iluminação Pública nas diversas localidades do município de São Lourenço da Mata-PE  Tratamento Diferenciado: -  Aplicabilidade Decreto 7174: Não  Aplicabilidade Margem de Preferência: Não  Quantidade: 1  Unidade de fornecimento: Unidade  ",
-        "datahora_prazo": null,
-        "datahora_abertura": "2020-09-02T09:00:00.000-03:00",
-        "datahora_retirada": null,
-        "datahora_visita": null,
-        "datahora_documento": null,
-        "data_validade": "2020-09-02",
-        "objeto": "* Licitação Eletrônica * - Contratação de empresa de engenharia para Prestação de Serviços de Substituição de luminárias e Lâmpadas atuais por Sistema de Iluminação em Led, na rede de iluminação Pública nas diversas localidades do município de São Lourenço da Mata-PE * www.comprasnet.gov.br *",
-        "observacao": "AVISO DE LICITAÇÃO - EDITAL RETIFICADO  Processo Licitatório Nº 037/2020. Pregão Eletrônico CEL Nº 028/2020. Objeto: CONTRATAÇÃO DE EMPRESA DE ENGENHARIA PARA PRESTAÇÃO DE SERVIÇOS DE SUBSTITUIÇÃO DE LUMINÁRIAS E LAMPADAS ATUAIS POR SISTEMA DE ILUMINAÇÃO EM LED, NA REDE DE ILUMINAÇÃO PÚBLICA NAS DIVERSAS LOCALIDADES DO MUNICÍPIO DE SÃO LOURENÇO DA MATA-PE. Valor Máximo Aceitável: R$ 1.279.903,89, Abertura das Propostas: 02/09/2020, 09:00h, através do Sistema Comprasnet - SIASG. O Edital Retificado na íntegra poderá ser retirado através no Sistema COMPRASNET do Portal de Compras Governamentais,  www.comprasgovernamentais.gov.br ou pelo E-mail: slm.licitacao.obras@gmail.com.  São Lourenço da Mata/PE, 20/08/2020.  ",
-        "modified": "2020-08-21T07:58:49.000-03:00",
-        "created": "2020-08-13T07:06:18.000-03:00",
-        "bidding_id": 12946943,
-        "edicts": [
-            {
-                "filename": "98257305000282020000.zip",
-                "url": "/boletim_web/public/licitacoes/12946943/arquivos/98257305000282020000.zip"
-            }
-        ],
-        "has_electronic_trading": true,
-        "bidding_grouping": {
-            "descricao": "RETIFICAÇÃO"
-        },
-        "phones": [],
-        "faxes": [],
-        "public_body": {
-            "nome": "Prefeitura Municipal de São Lourenço da Mata"
-        },
-        "modality": {
-            "nome": "Pregão Eletrônico"
-        },
-        "followups": []
-    },
-    {
-        "id": 12945902,
-        "orgao_uasg": "",
-        "orgao_endereco": "Praça Vila do Imperador, 160",
-        "orgao_cidade": "Ingá",
-        "orgao_estado": "PB",
-        "orgao_cep": "58380-000",
-        "edital": "TP/8/2020",
-        "edital_site": "",
-        "edital_homepage1": "",
-        "edital_homepage2": "",
-        "edital_preco": 0.0,
-        "edital_tem": true,
-        "edital_status_id": 3,
-        "email": "ingapb@hotmail.com",
-        "processo": "",
-        "valor_estimado": 0.0,
-        "itens": "",
-        "datahora_prazo": "2020-08-31T14:00:00.000-03:00",
-        "datahora_abertura": null,
-        "datahora_retirada": null,
-        "datahora_visita": null,
-        "datahora_documento": null,
-        "data_validade": "2020-08-31",
-        "objeto": "Execução de obras de Tapa Buraco em asfalto, usando massa CBUQ, em diversas ruas da cidade de Ingá",
-        "observacao": "TOMADA DE PREÇOS N.º 008/2020, DO TIPO MENOR PREÇO GLOBAL  O Edital e demais informações encontram-se à disposição dos interessados no endereço acima  citado, no horário das 08:00 às 12:00 horas. Informações pelo e-mail: licitacaoinga@gmail.com,  até o dia 26/08/2020.",
-        "modified": "2020-08-20T16:38:07.000-03:00",
-        "created": "2020-08-12T14:32:38.000-03:00",
-        "bidding_id": 12945902,
-        "edicts": [
-            {
-                "filename": "edital.zip",
-                "url": "/boletim_web/public/licitacoes/12945902/arquivos/edital.zip"
-            }
-        ],
-        "has_electronic_trading": false,
-        "bidding_grouping": {
-            "descricao": "NOVA"
-        },
-        "phones": [
-            {
-                "ddd": "83",
-                "telefone": "3394-1236",
-                "ramal": ""
-            },
-            {
-                "ddd": "83",
-                "telefone": "3394-1136",
-                "ramal": ""
-            }
-        ],
-        "faxes": [],
-        "public_body": {
-            "nome": "Prefeitura Municipal de Ingá"
-        },
-        "modality": {
-            "nome": "Tomada de Preço"
-        },
-        "followups": []
-    },
-    {
-        "id": 12948445,
-        "orgao_uasg": "",
-        "orgao_endereco": "Rua Durval da Costa Lira, 343",
-        "orgao_cidade": "Casserengue",
-        "orgao_estado": "PB",
-        "orgao_cep": "58238-000",
-        "edital": "TP/5/2020",
-        "edital_site": "",
-        "edital_homepage1": "",
-        "edital_homepage2": "",
-        "edital_preco": 0.0,
-        "edital_tem": true,
-        "edital_status_id": 3,
-        "email": "sadm5010@hotmail.com",
-        "processo": "",
-        "valor_estimado": 0.0,
-        "itens": "",
-        "datahora_prazo": "2020-08-31T09:30:00.000-03:00",
-        "datahora_abertura": null,
-        "datahora_retirada": null,
-        "datahora_visita": null,
-        "datahora_documento": null,
-        "data_validade": "2020-08-31",
-        "objeto": " Contratação de empresa especializada para Construção de unidade escolar com 4 quatro salas de aula, conforme Convênio nº 555/2019/Secretaria de Estado da Educação e da Ciência e Tecnologia e a Prefeitura Municipal de Casserengue/PB.",
-        "observacao": "Recursos: previstos no orçamento vigente. Fundamento legal: Lei Federal  nº 8.666/93; Lei Complementar nº 123/06; e legislação pertinente, consideradas as alterações  posteriores das referidas normas. Informações: no horário das 08:00 as 12:00 horas dos dias  úteis, no endereço supracitado. Telefone: 83 3634-1141. Edital: http://www.casserengue.pb.gov.  br/; www.tce.pb.gov.br.",
-        "modified": "2020-08-19T16:21:04.000-03:00",
-        "created": "2020-08-13T13:37:03.000-03:00",
-        "bidding_id": 12948445,
-        "edicts": [
-            {
-                "filename": "edital.zip",
-                "url": "/boletim_web/public/licitacoes/12948445/arquivos/edital.zip"
-            }
-        ],
-        "has_electronic_trading": false,
-        "bidding_grouping": {
-            "descricao": "NOVA"
-        },
-        "phones": [
-            {
-                "ddd": "83",
-                "telefone": "3634-1141",
-                "ramal": ""
-            }
-        ],
-        "faxes": [],
-        "public_body": {
-            "nome": "Prefeitura Municipal de Casserengue"
-        },
-        "modality": {
-            "nome": "Tomada de Preço"
-        },
-        "followups": []
-    },
-    {
-        "id": 12929179,
-        "orgao_uasg": "",
-        "orgao_endereco": "Avenida Rio Grande do Sul, 721 - Bairro dos Estados",
-        "orgao_cidade": "João Pessoa",
-        "orgao_estado": "PB",
-        "orgao_cep": "58030-020",
-        "edital": "CR/7.010/2020",
+        "edital": "CR/2/2020",
         "edital_site": "",
         "edital_homepage1": "",
         "edital_homepage2": "",
         "edital_preco": 0.0,
         "edital_tem": false,
         "edital_status_id": 0,
-        "email": "tteles@joaopessoa.pb.gov.br",
-        "processo": "2019/145378/SEINFRA",
+        "email": "cplpmcsa@yahoo.com.br",
+        "processo": "046/PMCSA-SMCSRP/2020 ",
         "valor_estimado": 0.0,
         "itens": "",
         "datahora_prazo": null,
-        "datahora_abertura": "2020-09-10T09:00:00.000-03:00",
-        "datahora_retirada": null,
-        "datahora_visita": null,
-        "datahora_documento": null,
-        "data_validade": "2020-09-10",
-        "objeto": "Contratação de Empresa Especializada de Engenharia para Serviços de Implantação de Pavimentação em Paralelepípedo no Bairro do Valentina, Rua: Jurandir Ribeiro e Bairro Planalto da Boa Sentença, Ruas: Rua Marcos Albino, Rua Sargento Pedro Nazaré, Rua Fortaleza, Rua Hermenegildo Francisco, João Pessoa - PB - LOTE 13. ",
-        "observacao": "AVISO DE LICITAÇÃO  CONCORRÊNCIA PÚBLICA Nº 7.010/2020  PROCESSO ADMINISTRATIVO Nº 2019/145378/SEINFRA  INTRUMENTO: A Prefeitura Municipal de João Pessoa através da Comissão Setorial de Licitação, devidamente autorizada pela Portaria nº 395, datada de 27 de maio de 2020, torna público que fará realizar a Licitação na modalidade Concorrência Pública Nº 07.010/2020, em regime de execução de empreitada por preço unitário, com tipo de licitação menor preço global com Recursos Próprios a ser realizada no dia 10/09/2020, impreterivelmente as 09 h nove horas,   A cópia do Edital e seus anexos estarão disponíveis e a disposição dos interessados a partir da sexta-feira dia 07/08/2020, no endereço: http://transparencia.joaopessoa.pb.gov/licitacoes. SUPORTE LEGAL: Lei Federal 8.666/93 e suas alterações posteriores. Quaisquer informação será prestada na Sala da Comissão Setorial de Licitação na Secretaria de Infra-Estrutura, localizada a Av. Rio Grande do Sul, 721, Bairro dos Estados, João Pessoa, Paraíba no horário das 8h às 12h ou das 13h as 16h, Fone 83 3214-7218 ou através do e-mail csl.seinfra@gmail.com  João Pessoa, 4 de agosto 2020",
-        "modified": "2020-08-05T12:14:33.000-03:00",
-        "created": "2020-08-05T12:03:46.000-03:00",
-        "bidding_id": 12929179,
-        "edicts": [],
-        "has_electronic_trading": false,
-        "bidding_grouping": {
-            "descricao": "NOVA"
-        },
-        "phones": [
-            {
-                "ddd": "83",
-                "telefone": "3214-7218",
-                "ramal": ""
-            },
-            {
-                "ddd": "83",
-                "telefone": "244-1290",
-                "ramal": ""
-            }
-        ],
-        "faxes": [],
-        "public_body": {
-            "nome": "Secretaria Municipal de Infra-Estrutura"
-        },
-        "modality": {
-            "nome": "Concorrência"
-        },
-        "followups": []
-    },
-    {
-        "id": 12918851,
-        "orgao_uasg": "",
-        "orgao_endereco": "Avenida Rio Grande do Sul, 721 - Bairro dos Estados",
-        "orgao_cidade": "João Pessoa",
-        "orgao_estado": "PB",
-        "orgao_cep": "58030-020",
-        "edital": "CR/7.009/2020",
-        "edital_site": "",
-        "edital_homepage1": "",
-        "edital_homepage2": "",
-        "edital_preco": 0.0,
-        "edital_tem": true,
-        "edital_status_id": 3,
-        "email": "tteles@joaopessoa.pb.gov.br",
-        "processo": "2019/145373/SEINFRA",
-        "valor_estimado": 0.0,
-        "itens": "",
-        "datahora_prazo": "2020-09-09T09:00:00.000-03:00",
-        "datahora_abertura": null,
+        "datahora_abertura": "2020-09-09T08:00:00.000-03:00",
         "datahora_retirada": null,
         "datahora_visita": null,
         "datahora_documento": null,
         "data_validade": "2020-09-09",
-        "objeto": "Contratação de Empresa Especializada de Engenharia para Serviços de Implantação de Pavimentação em Paralelepípedo no Bairro do Valentina, Ruas: Antônio Firmino Macedo e Rua João Alves Cordeiro e Bairro Mumbaba Ruas: Cidade Serra Redonda, Trav. Cid. Salgado de São Félix, Trav. Cidade de Manaíra, João Pessoa - Pb - LOTE 12.",
-        "observacao": "A cópia do Edital e seus anexos estarão disponíveis e a disposição dos  interessados a partir da quinta-feira dia 06/08/2020, no endereço:  http://transparencia.joaopessoa.pb.gov/licitacoes. SUPORTE LEGAL: Lei Federal 8.666/93 e  suas alterações posteriores.  Quaisquer informação será prestada na Sala da Comissão Setorial de Licitação  na Secretaria de Infra-Estrutura, localizada a Av. Rio Grande do Sul, 721, Bairro dos  Estados, João Pessoa, Paraíba no horário das 8h às 12h ou das 13h as 16h, Fone 83 3214-  7218 ou através do e-mail csl.seinfra@gmail.com",
-        "modified": "2020-08-04T15:24:04.000-03:00",
-        "created": "2020-07-31T09:24:00.000-03:00",
-        "bidding_id": 12918851,
-        "edicts": [
-            {
-                "filename": "edital.zip",
-                "url": "/boletim_web/public/licitacoes/12918851/arquivos/edital.zip"
-            }
-        ],
-        "has_electronic_trading": false,
-        "bidding_grouping": {
-            "descricao": "NOVA"
-        },
-        "phones": [
-            {
-                "ddd": "83",
-                "telefone": "3214-7218",
-                "ramal": ""
-            },
-            {
-                "ddd": "83",
-                "telefone": "244-1290",
-                "ramal": ""
-            }
-        ],
-        "faxes": [],
-        "public_body": {
-            "nome": "Secretaria Municipal de Infra-Estrutura"
-        },
-        "modality": {
-            "nome": "Concorrência"
-        },
-        "followups": []
-    },
-    {
-        "id": 12918848,
-        "orgao_uasg": "",
-        "orgao_endereco": "Avenida Rio Grande do Sul, 721 - Bairro dos Estados",
-        "orgao_cidade": "João Pessoa",
-        "orgao_estado": "PB",
-        "orgao_cep": "58030-020",
-        "edital": "CR/7.008/2020",
-        "edital_site": "",
-        "edital_homepage1": "",
-        "edital_homepage2": "",
-        "edital_preco": 0.0,
-        "edital_tem": true,
-        "edital_status_id": 3,
-        "email": "tteles@joaopessoa.pb.gov.br",
-        "processo": "2019/145376/SEINFRA",
-        "valor_estimado": 0.0,
-        "itens": "",
-        "datahora_prazo": "2020-09-08T09:00:00.000-03:00",
-        "datahora_abertura": null,
-        "datahora_retirada": null,
-        "datahora_visita": null,
-        "datahora_documento": null,
-        "data_validade": "2020-09-08",
-        "objeto": "Contratação de Empresa Especializada de Engenharia para Serviços de Implantação de Pavimentação em Paralelepípedo no Bairro Mumbaba na Cidade de João Pessoa/Pb nas Ruas: Cidade de Remígio, Cidade de Bom Sucesso, Cidade São Miguel de Taipu e Cidade de Mari - Lote 11.",
-        "observacao": "A cópia do Edital e seus anexos estarão disponíveis e a disposição dos interessados a  partir da terça-feira dia 04/08/2020, no endereço: http://transparencia.joaopessoa.pb.gov/licitacoes.  SUPORTE LEGAL: Lei Federal 8.666/93 e suas alterações posteriores.    Quaisquer informação será prestada na Sala da Comissão Setorial de Licitação  na Secretaria de Infra-Estrutura, localizada a Av. Rio Grande do Sul, 721, Bairro dos  Estados, João Pessoa, Paraíba no horário das 8h às 12h ou das 13h as 16h, Fone 83 3214-  7218 ou através do e-mail csl.seinfra@gmail.com",
-        "modified": "2020-08-03T13:57:04.000-03:00",
-        "created": "2020-07-31T09:23:12.000-03:00",
-        "bidding_id": 12918848,
-        "edicts": [
-            {
-                "filename": "edital.zip",
-                "url": "/boletim_web/public/licitacoes/12918848/arquivos/edital.zip"
-            }
-        ],
-        "has_electronic_trading": false,
-        "bidding_grouping": {
-            "descricao": "NOVA"
-        },
-        "phones": [
-            {
-                "ddd": "83",
-                "telefone": "3214-7218",
-                "ramal": ""
-            },
-            {
-                "ddd": "83",
-                "telefone": "244-1290",
-                "ramal": ""
-            }
-        ],
-        "faxes": [],
-        "public_body": {
-            "nome": "Secretaria Municipal de Infra-Estrutura"
-        },
-        "modality": {
-            "nome": "Concorrência"
-        },
-        "followups": []
-    },
-    {
-        "id": 12918845,
-        "orgao_uasg": "",
-        "orgao_endereco": "Avenida Rio Grande do Sul, 721 - Bairro dos Estados",
-        "orgao_cidade": "João Pessoa",
-        "orgao_estado": "PB",
-        "orgao_cep": "58030-020",
-        "edital": "CR/7.007/2020",
-        "edital_site": "",
-        "edital_homepage1": "",
-        "edital_homepage2": "",
-        "edital_preco": 0.0,
-        "edital_tem": true,
-        "edital_status_id": 3,
-        "email": "tteles@joaopessoa.pb.gov.br",
-        "processo": "2019/145563/SEINFRA",
-        "valor_estimado": 0.0,
-        "itens": "",
-        "datahora_prazo": "2020-09-03T09:00:00.000-03:00",
-        "datahora_abertura": null,
-        "datahora_retirada": null,
-        "datahora_visita": null,
-        "datahora_documento": null,
-        "data_validade": "2020-09-03",
-        "objeto": "Contratação de Empresa Especializada de Engenharia para Serviços de Implantação de Pavimentação em Paralelepípedo no Bairro Mumbaba na Cidade de João Pessoa/Pb nas Ruas: Cidade de Areia, Sermão da Montanha, Motorista José Pontes da Silva, Cidade de Catolé do Rocha e Cidade de Gurinhém - LOTE 10",
-        "observacao": "A cópia do Edital e seus anexos estarão disponíveis e a disposição dos interessados a partir da segunda-feira dia 03/08/2020, no endereço: http://transparencia.joaopessoa.pb.gov/licitacoes. SUPORTE LEGAL: Lei Federal 8.666/93 e suas alterações posteriores.     Quaisquer informação será prestada na Sala da Comissão Setorial de Licitação na Secretaria de Infra-Estrutura, localizada a Av. Rio Grande do Sul, 721, Bairro dos Estados, João Pessoa, Paraíba no horário das 8h às 12h ou das 13h as 16h, Fone 83 3214- 7218 ou através do e-mail csl.seinfra@gmail.com",
-        "modified": "2020-08-03T13:56:03.000-03:00",
-        "created": "2020-07-31T09:22:30.000-03:00",
-        "bidding_id": 12918845,
-        "edicts": [
-            {
-                "filename": "edital.zip",
-                "url": "/boletim_web/public/licitacoes/12918845/arquivos/edital.zip"
-            }
-        ],
-        "has_electronic_trading": false,
-        "bidding_grouping": {
-            "descricao": "NOVA"
-        },
-        "phones": [
-            {
-                "ddd": "83",
-                "telefone": "3214-7218",
-                "ramal": ""
-            },
-            {
-                "ddd": "83",
-                "telefone": "244-1290",
-                "ramal": ""
-            }
-        ],
-        "faxes": [],
-        "public_body": {
-            "nome": "Secretaria Municipal de Infra-Estrutura"
-        },
-        "modality": {
-            "nome": "Concorrência"
-        },
-        "followups": []
-    },
-    {
-        "id": 12913122,
-        "orgao_uasg": "",
-        "orgao_endereco": "Avenida Rio Grande do Sul, 721 - Bairro dos Estados",
-        "orgao_cidade": "João Pessoa",
-        "orgao_estado": "PB",
-        "orgao_cep": "58030-020",
-        "edital": "CR/7.005/2020",
-        "edital_site": "",
-        "edital_homepage1": "",
-        "edital_homepage2": "",
-        "edital_preco": 0.0,
-        "edital_tem": true,
-        "edital_status_id": 3,
-        "email": "tteles@joaopessoa.pb.gov.br",
-        "processo": "2019/145371/SEINFRA",
-        "valor_estimado": 0.0,
-        "itens": "",
-        "datahora_prazo": "2020-09-01T09:00:00.000-03:00",
-        "datahora_abertura": null,
-        "datahora_retirada": null,
-        "datahora_visita": null,
-        "datahora_documento": null,
-        "data_validade": "2020-09-01",
-        "objeto": "Contratação de Empresa Especializada de Engenharia Serviços de Implantação de Pavimentação em Paralelepípedo no Bairro Mumbaba na Cidade de João Pessoa/Pb nas Ruas: Cidade Salgado de São Félix, Cidade de Aparecida, Cidade de Princesa Isabel, Cidade de Conceição e Cidade de Bom Jesus - LOTE 07. ",
-        "observacao": "Licitação na modalidade Concorrência Pública Nº 07.005/2020, em regime de execução de empreitada por  preço unitário, com tipo de licitação menor preço global com Recursos Próprios  A cópia do Edital e seus anexos estarão disponíveis e a disposição dos interessados a partir da quinta-feira  dia 30/07/2020, no endereço: http://transparencia.joaopessoa.pb.gov/licitacoes. SUPORTE LEGAL:  Lei Federal 8.666/93 e suas alterações posteriores. Quaisquer informação será prestada na Sala da  Comissão Setorial de Licitação na Secretaria de Infra-Estrutura, localizada a Av. Rio Grande do Sul,  721, Bairro dos Estados, João Pessoa, Paraíba no horário das 8h às 12h ou das 13h as 16h, Fone 83  3214-7218 ou através do e-mail csl.seinfra@gmail.com",
-        "modified": "2020-07-31T14:44:07.000-03:00",
-        "created": "2020-07-29T13:47:59.000-03:00",
-        "bidding_id": 12913122,
-        "edicts": [
-            {
-                "filename": "edital.zip",
-                "url": "/boletim_web/public/licitacoes/12913122/arquivos/edital.zip"
-            }
-        ],
-        "has_electronic_trading": false,
-        "bidding_grouping": {
-            "descricao": "NOVA"
-        },
-        "phones": [
-            {
-                "ddd": "83",
-                "telefone": "3214-7218",
-                "ramal": ""
-            },
-            {
-                "ddd": "83",
-                "telefone": "244-1290",
-                "ramal": ""
-            }
-        ],
-        "faxes": [],
-        "public_body": {
-            "nome": "Secretaria Municipal de Infra-Estrutura"
-        },
-        "modality": {
-            "nome": "Concorrência"
-        },
-        "followups": []
-    },
-    {
-        "id": 12912012,
-        "orgao_uasg": "",
-        "orgao_endereco": "Av. Rio Grande do Sul, 721, Bairro dos Estados",
-        "orgao_cidade": "João Pessoa",
-        "orgao_estado": "PB",
-        "orgao_cep": "58015-020",
-        "edital": "CR/7.006/2020",
-        "edital_site": "",
-        "edital_homepage1": "",
-        "edital_homepage2": "",
-        "edital_preco": 0.0,
-        "edital_tem": false,
-        "edital_status_id": 0,
-        "email": "",
-        "processo": "2019/145374/SEINFRA",
-        "valor_estimado": 0.0,
-        "itens": "",
-        "datahora_prazo": "2020-09-02T09:00:00.000-03:00",
-        "datahora_abertura": null,
-        "datahora_retirada": null,
-        "datahora_visita": null,
-        "datahora_documento": null,
-        "data_validade": "2020-09-02",
-        "objeto": "Contratação de Empresa Especializada de Engenharia para Serviços de Implantação de Pavimentação em Paralelepípedo e Drenagem em Diversos Bairros da Cidade de João Pessoa/Pb Bairro Mumbaba: Rua Cidade de Monte Horebe, Rua Das Macaíbas, Rua Motorista Olavo Faustino de Oliveira e Trav. Cidade de Monte Horebe, Bairro Jardim Oceania: Rua Profª Ana Lianza Lombardi e Rua Waldir Braga - Lote 09",
-        "observacao": "A cópia do Edital e seus anexos estarão disponíveis e a disposição dos  interessados a partir da sexta-feira dia 31/07/2020, no endereço:  http://transparencia.joaopessoa.pb.gov/licitacoes. SUPORTE LEGAL: Lei Federal 8.666/93 e  suas alterações posteriores.  Quaisquer informação será prestada na Sala da Comissão Setorial de Licitação  na Secretaria de Infra-Estrutura, localizada a Av. Rio Grande do Sul, 721, Bairro dos  Estados, João Pessoa, Paraíba no horário das 8h às 12h ou das 13h as 16h, Fone 83 3214-  7218 ou através do e-mail csl.seinfra@gmail.com  João Pessoa-PB, 28 de julho 2020  TERESA CRISTINA TELES DE HOLANDA  Presidente da Comissão",
-        "modified": "2020-07-29T10:43:46.000-03:00",
-        "created": "2020-07-29T09:41:37.000-03:00",
-        "bidding_id": 12912012,
+        "objeto": "Contratação de Empresa especializada para realização de Serviços de Manutenção e Melhoramento do Parque de Iluminação Pública do Município do Cabo de Santo Agostinho, através da Secretaria Municipal de Coordenação Regional e Serviços Públicos. ",
+        "observacao": "* Nova publicação sujeita a confirmação na unidade licitante, pois não foi informado tratar-se de Reabertura. *     AVISO DE LICITAÇÃO - CONCORRÊNCIA Nº 002/PMCSA SMCRSP/2020  A PREFEITURA MUNICIPAL DO CABO DE SANTO AGOSTINHO/ PE., através da Secretaria Municipal de Coordenação Regional e Serviços Públicos - Informa o Processo Administrativo: Nº 156/2020 - Processo Licitatório: 046/PMCSA-SMCSRP/2020 - Modalidade: CONCORRÊNCIA Nº 002/PMCSA-SMCRSP/2020. Tramitação: 1ª CPL. Natureza do Objeto: Serviço - Descrição do Objeto: Contratação de Empresa especializada para realização de Serviços de Manutenção e Melhoramento do Parque de Iluminação Pública do Município do Cabo de Santo Agostinho, através da Secretaria Municipal de Coordenação Regional e Serviços Públicos. Valor Máximo Aceitável: 5.593.011,46 cinco milhões quinhentos e noventa e três mil onze reais e quarenta e seis centavos. DATA/HORA: 09/09/2020 ÀS 08H00MIN. Informações: Centro Administrativo Municipal - Rua Manoel de Queiroz da Silva, 145, Térreo, Torrinha, Cabo de Santo Agostinho, PE, CEP 54525-180; Edital, anexos podem ser obtidas no mesmo endereço da sessão de abertura, devendo os licitantes interessados trazer Pen Drive ou DVD., ou através do email: editaiscplcabo@hotmail.com no horário das 08h00min às 14h00min, de segunda a sexta-feira.  Cabo de Santo Agostinho, 07 de Agosto de 2020.",
+        "modified": "2020-08-10T13:19:18.000-03:00",
+        "created": "2020-07-07T14:56:04.000-03:00",
+        "bidding_id": 12859757,
         "edicts": [],
         "has_electronic_trading": false,
         "bidding_grouping": {
-            "descricao": "NOVA"
+            "descricao": "REABERTURA"
         },
         "phones": [
             {
-                "ddd": "83",
-                "telefone": "3214-7218",
+                "ddd": "81",
+                "telefone": "3524-9064",
+                "ramal": ""
+            },
+            {
+                "ddd": "81",
+                "telefone": "3524-9075",
                 "ramal": ""
             }
         ],
-        "faxes": [],
+        "faxes": [
+            {
+                "ddd": "81",
+                "telefone": "3521-6619",
+                "ramal": ""
+            }
+        ],
         "public_body": {
-            "nome": "Secretaria Estadual da Infra Estrutura"
+            "nome": "Prefeitura Municipal de Cabo de Santo Agostinho"
         },
         "modality": {
             "nome": "Concorrência"
