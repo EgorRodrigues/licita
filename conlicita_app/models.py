@@ -2,7 +2,7 @@ from django.db import models
 
 
 # todo Inserir os campos multiplos
-class licitacao(models.Model):
+class Licitacao(models.Model):
     id_conlicitacao = models.IntegerField()
     orgao_uasg = models.CharField(max_length=6, null=True, blank=True)
     orgao_endereco = models.CharField(max_length=150, null=True, blank=True)
@@ -42,6 +42,7 @@ class licitacao(models.Model):
     arquivo_edital = models.FileField(null=True, blank=True)
 
     class Meta:
+        unique_together = ['id_conlicitacao']
         verbose_name_plural = 'licitações'
         ordering = ['data_validade']
 
@@ -50,7 +51,7 @@ class licitacao(models.Model):
 
 
 # todo Inserir campos relacionados como Sócios
-class empresa(models.Model):
+class Empresa(models.Model):
     razao_social = models.CharField(max_length=150)
     cnpj = models.IntegerField()
     endereco = models.CharField(max_length=150, null=True, blank=True)
@@ -65,10 +66,38 @@ class empresa(models.Model):
     capital_social = models.DecimalField(max_digits=11, decimal_places=2, null=True, blank=True)
     # sócios =
     segmento = models.TextField(null=True, blank=True)
-    # my_bidding = models.ManyToManyField(licitacao)
+    my_bidding = models.ManyToManyField(Licitacao, through='EmpresaLicita',
+                                     related_name='licita_list', blank=True)
 
     class Meta:
         unique_together = ['cnpj']
 
     def __str__(self):
         return f'{self.cnpj} - {self.razao_social}'
+
+class EmpresaLicita(models.Model):
+    STATUS_CHOICE = (
+        ('1', 'Participar'),
+        ('2', 'Acompanhar'),
+        ('3', 'Descartar'),
+    )
+
+    licitacao = models.ForeignKey(Licitacao, related_name='licitacao_empresa', on_delete=models.CASCADE)
+    empresa = models.ForeignKey(Empresa, related_name='licitacao_empresa', on_delete=models.CASCADE)
+    observacao = models.CharField(max_length=255, null=True, blank=True)
+
+    # Sobre a Habilitação:
+    visita_tecnica = models.NullBooleanField(verbose_name='visita técnica')
+    garantia_proposta = models.NullBooleanField(verbose_name='garantia de proposta')
+    qualificacao_tecnica = models.NullBooleanField(verbose_name='qualificação técnica')
+    consorcio = models.NullBooleanField(verbose_name='cabe consórcio?')
+    cadastro = models.NullBooleanField(verbose_name='fazer cadastro?')
+
+    # Sobre a Proposta:
+    orcamento_data_base = models.DateField(verbose_name='data base da planilha', null=True, blank=True)
+    prazo_execucao = models.CharField(max_length=50, verbose_name='prazo de execução da obra', null=True, blank=True)
+
+    # Gestão das Licitações
+    status = models.CharField(max_length=1, choices=STATUS_CHOICE, blank=True, null=True)
+
+

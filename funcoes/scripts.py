@@ -2,8 +2,8 @@ from datetime import datetime
 from json import load
 from decimal import Decimal
 
-from conlicita_app.models import licitacao
-from conlicita_app.models import empresa
+from conlicita_app.models import Licitacao
+from conlicita_app.models import Empresa
 
 
 def abrir_json(arquivo):
@@ -17,7 +17,7 @@ def importar_licitacoes():
     certames = abrir_json(arquivo)
 
     for certame in certames:
-        licitacao(
+        Licitacao(
             id_conlicitacao=certame['id'],
             orgao_uasg=certame['orgao_uasg'],
             orgao_endereco=certame['orgao_endereco'],
@@ -57,7 +57,7 @@ def importar_empresas():
     file_data = abrir_json(arquivo=arquivo)
 
     for key in list(file_data.keys()):
-        empresa(
+        Empresa(
             razao_social=file_data[key]['Razão Social'],
             cnpj=file_data[key]['CNPJ'].replace('.','').replace('/','').replace('-',''),
             endereco=file_data[key]['Endereço'],
