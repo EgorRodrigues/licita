@@ -77,6 +77,7 @@ class Empresa(models.Model):
 
 class EmpresaLicita(models.Model):
     STATUS_CHOICE = (
+        ('0', 'Não Avaliado'),
         ('1', 'Participar'),
         ('2', 'Acompanhar'),
         ('3', 'Descartar'),
@@ -98,6 +99,7 @@ class EmpresaLicita(models.Model):
     prazo_execucao = models.CharField(max_length=50, verbose_name='prazo de execução da obra', null=True, blank=True)
 
     # Gestão das Licitações
-    status = models.CharField(max_length=1, choices=STATUS_CHOICE, blank=True, null=True)
+    status = models.CharField(max_length=1, choices=STATUS_CHOICE, default='0', blank=True, null=True)
 
-
+    def __str__(self):
+        return f'{self.licitacao.edital} - {self.licitacao.orgao_cidade} - {self.observacao}'
