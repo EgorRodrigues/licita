@@ -1,8 +1,11 @@
+import time
+import pandas as pd
+from bs4 import BeautifulSoup
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from datetime import datetime
-from json import load, loads, dump
+from json import load, loads, dump, dumps
 from decimal import Decimal
 from tqdm import tqdm
 
@@ -34,6 +37,7 @@ def abrir_json(arquivo):
     with open(arquivo, 'r', encoding='UTF-8') as file_data:
         data = load(file_data)
     return data
+
 
 def raspar_dados_licitacao():
     acompanhamento = []
@@ -105,6 +109,62 @@ def importar_licitacoes():
             public_body=certame['public_body']['nome'],
             modality=certame['modality']['nome']
         ).save()
+
+
+def buscar_concorrente(concorrente):
+    driver.find_element_by_id('cnpj').clear()
+    driver.find_element_by_id('cnpj').send_keys(concorrente)
+    driver.find_element_by_xpath('//button[@class="btn btn-primary"]').click()
+    time.sleep(3)
+
+    element = driver.find_element_by_xpath('//div[@class="row mb-3"][1]')
+    element2 = driver.find_element_by_xpath('//div[@class="row mb-3"][6]')
+    html_content = element.get_attribute('outerHTML')
+    html_content2 = element2.get_attribute('outerHTML')
+
+    soup = BeautifulSoup(html_content, 'html.parser')
+    soup2 = BeautifulSoup(html_content2, 'html.parser')
+    table = soup.find()
+    table2 = soup2.find('table')
+    t1 = table.find_all('dl')
+    t2 = pd.read_html(str(table2))[0].to_dict('records')
+
+    empresa = {}
+    for n in range(len(t1)):
+        if n == 13:
+            empresa[t1[n - 1].find('dt').text] = list()
+            for s in range(len(t1[n - 1].find_all('p'))):
+                empresa[t1[n - 1].find('dt').text].append(t1[n - 1].find_all('p')[s].text)
+        else:
+            empresa[t1[n - 1].find('dt').text] = t1[n - 1].find('dd').text
+    empresa['Licitacoes'] = t2
+
+    return empresa
+
+
+def raspar_dados_empresas():
+    empresas = {}
+    print('Abrindo Base de Concorrentes')
+    concorrentes = pd.read_json('./funcoes/json/concorrentes.json')
+
+    print('Fazendo Login no portal')
+    login_conlicitacao()
+
+    print('Acessando pagina de pesquisa')
+    driver.get('https://consultaonline.conlicitacao.com.br/concorrentes')
+
+    for c in range(len(concorrentes[0])):
+        empresas[concorrentes[0][c]] = buscar_concorrente(concorrentes[0][c])
+        print(f'Concorrente {concorrentes[0][c]} Coletado com Sucesso!')
+
+    print('Gravando no Arquivo')
+    with open('./funcoes/json/Empresas.json', 'w', encoding='UTF-8') as jp:
+        js = dumps(empresas, indent=4, ensure_ascii=False)
+        jp.write(js)
+
+    driver.quit()
+
+    return empresas
 
 
 def importar_empresas():
