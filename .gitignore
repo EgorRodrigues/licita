@@ -13,3 +13,4 @@ manage.py
 # Sistama
 /arquivos/
 *.pdf
+*.json
