@@ -1,15 +1,11 @@
 import time
 
-from matplotlib import pyplot as plt
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from json import loads, dump
 
 
-option = Options()
-option.headless = True
 driver = webdriver.Chrome()
-
 formato = 'json'
 
 def login_conlicitacao():
@@ -35,8 +31,7 @@ with open('../json/acompanhar_licitacoes.json', 'r', encoding='UTF-8') as file_d
     data = [loads(d) for d in data]
 
 acompanhamento = []
-print(data)
-print('Inicinado o "for"')
+
 for i in data[0]:
     print(i)
     num_conlicitacao = i
