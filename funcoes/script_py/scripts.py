@@ -39,7 +39,7 @@ def abrir_json(arquivo):
     return data
 
 
-def raspar_dados_licitacao():
+def raspar_dados_licitacao(lista):
     acompanhamento = []
     formato = 'json'
 
@@ -47,13 +47,13 @@ def raspar_dados_licitacao():
     login_conlicitacao()
 
     # todo modificar esse código para passar uma lista de licitações.
-    print('Puxando Lista de Licitações')
-    with open('./funcoes/json/acompanhar_licitacoes.json', 'r', encoding='UTF-8') as file_data:
-        data = file_data.readlines()
-        data = [loads(d) for d in data]
+    # print('Puxando Lista de Licitações')
+    # with open('./funcoes/json/acompanhar_licitacoes.json', 'r', encoding='UTF-8') as file_data:
+    #     data = file_data.readlines()
+    #     data = [loads(d) for d in data]
 
-    print('Carregando os Arquivos')
-    for i in tqdm(data[0], total=len(data[0])):
+    # for i in tqdm(data[0], total=len(data[0])):
+    for i in tqdm(lista, total=len(lista)):
         num_conlicitacao = i
         url = f'https://consultaonline.conlicitacao.com.br/biddings/{num_conlicitacao}.{formato}'
         driver.get(url)
@@ -71,9 +71,10 @@ def raspar_dados_licitacao():
     return acompanhamento
 
 
-def importar_licitacoes():
-    arquivo = './funcoes/json/Acompanhamento.json'
-    certames = abrir_json(arquivo)
+def importar_licitacoes(lista):
+    # arquivo = './funcoes/json/Acompanhamento.json'
+    # certames = abrir_json(arquivo)
+    certames = raspar_dados_licitacao(lista)
 
     for certame in certames:
         Licitacao(
@@ -111,9 +112,9 @@ def importar_licitacoes():
         ).save()
 
 
-def buscar_concorrente(concorrente):
+def buscar_cnpj(cnpjota):
     driver.find_element_by_id('cnpj').clear()
-    driver.find_element_by_id('cnpj').send_keys(concorrente)
+    driver.find_element_by_id('cnpj').send_keys(cnpjota)
     driver.find_element_by_xpath('//button[@class="btn btn-primary"]').click()
     time.sleep(3)
 
@@ -142,10 +143,9 @@ def buscar_concorrente(concorrente):
     return empresa
 
 
-def raspar_dados_empresas():
+def raspar_dados_empresas(cnpjotas):
     empresas = {}
-    print('Abrindo Base de Concorrentes')
-    concorrentes = pd.read_json('./funcoes/json/concorrentes.json')
+    # cnpjotas = pd.read_json('./funcoes/json/concorrentes.json')
 
     print('Fazendo Login no portal')
     login_conlicitacao()
@@ -153,9 +153,9 @@ def raspar_dados_empresas():
     print('Acessando pagina de pesquisa')
     driver.get('https://consultaonline.conlicitacao.com.br/concorrentes')
 
-    for c in range(len(concorrentes[0])):
-        empresas[concorrentes[0][c]] = buscar_concorrente(concorrentes[0][c])
-        print(f'Concorrente {concorrentes[0][c]} Coletado com Sucesso!')
+    for c in range(len(cnpjotas)):
+        empresas[cnpjotas[c]] = buscar_cnpj(cnpjotas[c])
+        print(f'Concorrente {cnpjotas[c]} Coletado com Sucesso!')
 
     print('Gravando no Arquivo')
     with open('./funcoes/json/Empresas.json', 'w', encoding='UTF-8') as jp:
