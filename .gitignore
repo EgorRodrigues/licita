@@ -14,3 +14,4 @@ manage.py
 /arquivos/
 *.pdf
 *.json
+*.log
