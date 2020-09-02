@@ -88,11 +88,11 @@ class EmpresaLicita(models.Model):
     observacao = models.CharField(max_length=255, null=True, blank=True)
 
     # Sobre a Habilitação:
-    visita_tecnica = models.NullBooleanField(verbose_name='visita técnica')
-    garantia_proposta = models.NullBooleanField(verbose_name='garantia de proposta')
-    qualificacao_tecnica = models.NullBooleanField(verbose_name='qualificação técnica')
-    consorcio = models.NullBooleanField(verbose_name='cabe consórcio?')
-    cadastro = models.NullBooleanField(verbose_name='fazer cadastro?')
+    visita_tecnica = models.BooleanField(verbose_name='visita técnica', null=True)
+    garantia_proposta = models.BooleanField(verbose_name='garantia de proposta', null=True)
+    qualificacao_tecnica = models.BooleanField(verbose_name='qualificação técnica', null=True)
+    consorcio = models.BooleanField(verbose_name='cabe consórcio?', null=True)
+    cadastro = models.BooleanField(verbose_name='fazer cadastro?', null=True)
 
     # Sobre a Proposta:
     orcamento_data_base = models.DateField(verbose_name='data base da planilha', null=True, blank=True)

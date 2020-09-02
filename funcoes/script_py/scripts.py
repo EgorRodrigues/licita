@@ -1,12 +1,11 @@
 import time
+from decimal import Decimal
+from json import load, loads, dump, dumps
+
 import pandas as pd
 from bs4 import BeautifulSoup
-
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
-from json import load, loads, dump, dumps
-from decimal import Decimal
 from tqdm import tqdm
 
 from conlicita_app.models import Licitacao
@@ -18,11 +17,8 @@ option.headless = True
 driver = webdriver.Chrome(options=option)
 
 
-def login_conlicitacao():
+def login_conlicitacao(login, senha):
     driver.get('https://consultaonline.conlicitacao.com.br/users/login')
-
-    login = 'adalberto@centralsolo.com.br'
-    senha = 'solo535353'
 
     btn_xpath = '//input[@name="commit"]'
     login_id = 'login'
@@ -44,7 +40,9 @@ def raspar_dados_licitacao(lista):
     formato = 'json'
 
     print('Fazendo Login na Pagina')
-    login_conlicitacao()
+    login = 'adalberto@centralsolo.com.br'
+    senha = 'solo535353'
+    login_conlicitacao(login, senha)
 
     # todo modificar esse código para passar uma lista de licitações.
     # print('Puxando Lista de Licitações')
@@ -65,8 +63,9 @@ def raspar_dados_licitacao(lista):
 
     driver.quit()
 
-    with open('./funcoes/json/Acompanhamento.json', 'w', encoding='UTF-8') as file_data:
-        dump(acompanhamento, file_data, indent=4, ensure_ascii=False, separators=(',', ': '))
+    # Todo Desativar/Ativar o Recurso de Gravação em Arquivo
+    # with open('./funcoes/json/Acompanhamento.json', 'w', encoding='UTF-8') as file_data:
+    #     dump(acompanhamento, file_data, indent=4, ensure_ascii=False, separators=(',', ': '))
 
     return acompanhamento
 
@@ -157,19 +156,20 @@ def raspar_dados_empresas(cnpjotas):
         empresas[cnpjotas[c]] = buscar_cnpj(cnpjotas[c])
         print(f'Concorrente {cnpjotas[c]} Coletado com Sucesso!')
 
-    print('Gravando no Arquivo')
-    with open('./funcoes/json/Empresas.json', 'w', encoding='UTF-8') as jp:
-        js = dumps(empresas, indent=4, ensure_ascii=False)
-        jp.write(js)
+    # Todo Desativar/Ativar o Recurso de Gravação em Arquivo
+    # with open('./funcoes/json/Empresas.json', 'w', encoding='UTF-8') as jp:
+    #     js = dumps(empresas, indent=4, ensure_ascii=False)
+    #     jp.write(js)
 
     driver.quit()
 
     return empresas
 
 
-def importar_empresas():
-    arquivo = './funcoes/json/Empresas.json'
-    file_data = abrir_json(arquivo=arquivo)
+def importar_empresas(cnpjotas):
+    # arquivo = './funcoes/json/Empresas.json'
+    # file_data = abrir_json(arquivo=arquivo)
+    file_data = raspar_dados_empresas(cnpjotas)
 
     for key in list(file_data.keys()):
         Empresa(
