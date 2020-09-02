@@ -147,7 +147,9 @@ def raspar_dados_empresas(cnpjotas):
     # cnpjotas = pd.read_json('./funcoes/json/concorrentes.json')
 
     print('Fazendo Login no portal')
-    login_conlicitacao()
+    login = 'adalberto@centralsolo.com.br'
+    senha = 'solo535353'
+    login_conlicitacao(login, senha)
 
     print('Acessando pagina de pesquisa')
     driver.get('https://consultaonline.conlicitacao.com.br/concorrentes')
