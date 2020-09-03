@@ -75,6 +75,7 @@ class Empresa(models.Model):
     def __str__(self):
         return f'{self.cnpj} - {self.razao_social}'
 
+
 class EmpresaLicita(models.Model):
     STATUS_CHOICE = (
         ('0', 'Não Avaliado'),
