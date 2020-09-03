@@ -1,12 +1,53 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    {% for n in object_list %}
-        {{ n.edital }} <br>
+    {% for bid in object_list %}
+        <div class="col-12">
+            <div class="card-header">
+                <div>{{ bid }}</div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class=" col-3  ">
+                        <dl>
+                            <dt>Modalidade</dt>
+                            <dd>{{ bid.modality }}</dd>
+                        </dl>
+                    </div>
+                    <div class="col-3">
+                        <dl>
+                            <dt>Nº Edital</dt>
+                            <dd>{{bid.edital}}</dd>
+                        </dl>
+                    </div>
+                    <div class="col-3">
+                        <dl>
+                            <dt>Data do Certame</dt>
+                            <dd>{{ bid.data_validade }}</dd>
+                        </dl>
+                    </div>
+                    <div class="col-3">
+                        <dl>
+                            <dt>Orgão</dt>
+                            <dd>{{ bid.public_body }}</dd>
+                        </dl>
+                    </div>
+                    <div class="col-12">
+                        <dl>
+                            <dt>Objeto</dt>
+                            <dd>{{bid.objeto}}</dd>
+                        </dl>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                </div>
+                <hr>
+            </div>
+        </div>
+        <br>
     {% endfor %}
 
-    <div class="content">teste</div>
     <form method="post">
         {% csrf_token %}
         <button type="submit">Enviar</button>
