@@ -7,6 +7,8 @@ from django.views.generic.edit import CreateView
 
 from .models import Licitacao, Empresa, EmpresaLicita
 
+from funcoes.script_py.scripts import importar_licitacoes
+
 
 class Relatorio(View):
     def get(self, request, *args, **kwargs):
@@ -28,6 +30,9 @@ class LicitaDetail(DetailView):
 class LicitaCreate(CreateView):
     model = Licitacao
     fields = [
-        'objeto',
-        'edital'
+        'id_conlicitacao',
     ]
+
+    def post(self, request, *args, **kwargs):
+        bidding = importar_licitacoes(request.POST['id_conlicitacao'].split())
+        return HttpResponse(bidding)

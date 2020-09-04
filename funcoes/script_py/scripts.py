@@ -110,7 +110,7 @@ def importar_licitacoes(lista):
             public_body=certame['public_body']['nome'],
             modality=certame['modality']['nome']
         ).save()
-
+    return certames
 
 def buscar_cnpj(cnpjota):
     driver.find_element_by_id('cnpj').clear()
