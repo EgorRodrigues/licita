@@ -1,12 +1,60 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
     {{ object }}
+        <div class="col-12">
+            <div class="card-body">
+                <div class="row">
+                    <div class=" col-3  ">
+                        <dl>
+                            <dt>Modalidade</dt>
+                            <dd>{{ object.modality }}</dd>
+                        </dl>
+                    </div>
+                    <div class="col-3">
+                        <dl>
+                            <dt>Nº Edital</dt>
+                            <dd>{{object.edital}}</dd>
+                        </dl>
+                    </div>
+                    <div class="col-3">
+                        <dl>
+                            <dt>Data do Certame</dt>
+                            <dd>{{ object.data_validade }}</dd>
+                        </dl>
+                    </div>
+                    <div class="col-3">
+                        <dl>
+                            <dt>Orgão</dt>
+                            <dd>{{ object.public_body }}</dd>
+                        </dl>
+                    </div>
+                    <div class="col-12">
+                        <dl>
+                            <dt>Objeto</dt>
+                            <dd>{{object.objeto}}</dd>
+                        </dl>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
 
-
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Enviar</button>
-    </form>
+    <a class="btn btn-outline-primary" href="{% url 'licita_update' object.id %}" type="button">Editar</a>
+    <a class="btn btn-outline-danger" href="{% url 'licita_delete' object.id %}" role="button">Excluir</a>
+    <a class="btn btn-outline-success" href="{% url 'licita_list' %}" role="button">Voltar</a>
 {% endblock %}
+
+[
+    'id_conlicitacao', 'orgao_uasg', 'orgao_endereco',
+    'orgao_cidade', 'orgao_estado', 'orgao_cep',
+    'edital', 'edital_site', 'edital_homepage',
+    'edital_homepage2', 'edital_preco', 'edital_tem',
+    'edital_status_id', 'email', 'processo',
+    'valor_estimado', 'itens', 'datahora_prazo',
+    'datahora_abertura', 'datahora_retirada', 'datahora_visita',
+    'datahora_documento', 'data_validade', 'objeto',
+    'observacao', 'modified', 'created', 'bidding_id',
+    'has_electronic_trading', 'public_body', 'modality',
+    'arquivo_edital',
+]

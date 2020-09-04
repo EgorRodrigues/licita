@@ -173,7 +173,7 @@ def importar_empresas(cnpjotas):
     # arquivo = './funcoes/json/Empresas.json'
     # file_data = abrir_json(arquivo=arquivo)
     file_data = raspar_dados_empresas(cnpjotas)
-
+    print(file_data)
     for key in list(file_data.keys()):
         Empresa(
             razao_social=file_data[key]['Razão Social'],
