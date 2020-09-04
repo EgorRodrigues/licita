@@ -6,7 +6,7 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.budgets, name='budgets'),
-    path('relatorio/', views.Relatorio.as_view()),
     path('licitacao_list/', views.LicitaList.as_view()),
+    path('licita/create/', views.LicitaCreate.as_view(), name='licita_create'),
+    path('licita/detail/<int:pk>', views.LicitaDetail.as_view(), name='licita_detail')
 ] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)

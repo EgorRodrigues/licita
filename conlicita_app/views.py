@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView
 
 from .models import Licitacao, Empresa, EmpresaLicita
 
@@ -18,9 +20,14 @@ class Relatorio(View):
 class LicitaList(ListView):
     model = Licitacao
 
-    def post(self, request, *args, **kwargs):
-        return HttpResponse('ok deu certo também')
+
+class LicitaDetail(DetailView):
+    model = Licitacao
 
 
-def budgets(request):
-    return render(request, 'budgets.html', {'Nome': 'Egor'})
+class LicitaCreate(CreateView):
+    model = Licitacao
+    fields = [
+        'objeto',
+        'edital'
+    ]

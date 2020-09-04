@@ -4,7 +4,7 @@
     {% for bid in object_list %}
         <div class="col-12">
             <div class="card-header">
-                <div>{{ bid }}</div>
+                <div class="text-center"><a class="btn" href={% url 'licita_detail' bid.id %}">{{ bid }}</a></div>
             </div>
             <div class="card-body">
                 <div class="row">
@@ -39,10 +39,6 @@
                         </dl>
                     </div>
                 </div>
-                <hr>
-                <div class="row">
-                </div>
-                <hr>
             </div>
         </div>
         <br>
