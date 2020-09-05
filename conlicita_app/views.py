@@ -64,7 +64,9 @@ class LicitaUpdate(UpdateView):
         'has_electronic_trading', 'public_body', 'modality',
         'arquivo_edital',
     ]
-    success_url = '/licitacoes/licita/list/'
+
+    def get_success_url(self):
+        return reverse_lazy('licita_detail', kwargs={'pk': self.object.id})
 
 
 class LicitaDelete(DeleteView):
