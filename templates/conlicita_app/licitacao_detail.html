@@ -43,18 +43,22 @@
                         <dd>R$ {{ object.valor_estimado }}</dd>
                     </dl>
                 </div>
+                {% if object.edital_site %}
                 <div class="col-3">
                     <dl>
                         <dt>Edital Site</dt>
                         <dd><a href="{{ object.edital_site }}">Link Edital</a></dd>
                     </dl>
                 </div>
+                {% endif %}
+                {% if object.arquivo_edital %}
                 <div class="col-3">
                     <dl>
                         <dt>Edital</dt>
-                        <dd><a href="{{ object.arquivo_edital }}">Edital</a></dd>
+                        <dd><a href="/arquivos/{{ object.arquivo_edital }}">Edital</a></dd>
                     </dl>
                 </div>
+                {% endif %}
                 <div class="col-3">
                     <dl>
                         <dt>Cidade</dt>
@@ -77,12 +81,12 @@
                     </dl>
                 </div>
             </div>
+            <hr>
+            <a class="btn btn-outline-primary" href="{% url 'licita_update' object.id %}" type="button">Editar</a>
+            <a class="btn btn-outline-danger" href="{% url 'licita_delete' object.id %}" type="button">Excluir</a>
+            <a class="btn btn-outline-success" href="{% url 'licita_list' %}" type="button">Voltar</a>
         </div>
     </div>
-
-    <a class="btn btn-outline-primary" href="{% url 'licita_update' object.id %}" type="button">Editar</a>
-    <a class="btn btn-outline-danger" href="{% url 'licita_delete' object.id %}" role="button">Excluir</a>
-    <a class="btn btn-outline-success" href="{% url 'licita_list' %}" role="button">Voltar</a>
 {% endblock %}
 
 [

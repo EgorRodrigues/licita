@@ -25,6 +25,6 @@ from conlicita_app import urls as conlicita_urls
 
 
 urlpatterns = [
-    path('licitacoes/', include(conlicita_urls)),
-    path('', admin.site.urls),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('', include(conlicita_urls)),
+    path('admin/', admin.site.urls),
+]

@@ -8,13 +8,13 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class=" col-3  ">
+                    <div class=" col-2  ">
                         <dl>
                             <dt>Modalidade</dt>
                             <dd>{{ bid.modality }}</dd>
                         </dl>
                     </div>
-                    <div class="col-3">
+                    <div class="col-2">
                         <dl>
                             <dt>Nº Edital</dt>
                             <dd>{{bid.edital}}</dd>
@@ -32,6 +32,14 @@
                             <dd>{{ bid.public_body }}</dd>
                         </dl>
                     </div>
+                    {% if bid.arquivo_edital %}
+                    <div class="col-2">
+                        <dl>
+                            <dt>Edital</dt>
+                            <dd><a href="/arquivos/{{ bid.arquivo_edital }}">Edital</a></dd>
+                        </dl>
+                    </div>
+                    {% endif %}
                     <div class="col-12">
                         <dl>
                             <dt>Objeto</dt>
@@ -39,6 +47,10 @@
                         </dl>
                     </div>
                 </div>
+                <hr>
+                <a class="btn btn-outline-primary" href="{% url 'licita_update' bid.id %}" type="button">Editar</a>
+                <a class="btn btn-outline-danger" href="{% url 'licita_delete' bid.id %}" type="button">Excluir</a>
+                <a class="btn btn-outline-success" href="{% url 'licita_detail'  bid.id %}" type="button">Abrir</a>
             </div>
         </div>
         <br>
