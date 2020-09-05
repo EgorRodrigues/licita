@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-    <title>Licitações</title>
+    <title>Licitações - Egor</title>
 </head>
 <body>
     <div class="container">
+        <div class="col -12 d-flex flex-row-reverse">
+            <a class="btn btn-outline-danger" href="{% url 'logout' %}" type="button">Sair</a>
+        </div>
         {% block content %}
         {% endblock %}
     </div>

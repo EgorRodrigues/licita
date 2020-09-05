@@ -5,6 +5,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Licitacao, Empresa, EmpresaLicita
 
@@ -20,15 +21,15 @@ class Relatorio(View):
         return HttpResponse('Deu Certo!')
 
 
-class LicitaList(ListView):
+class LicitaList(LoginRequiredMixin, ListView):
     model = Licitacao
 
 
-class LicitaDetail(DetailView):
+class LicitaDetail(LoginRequiredMixin, DetailView):
     model = Licitacao
 
 
-class LicitaCreate(CreateView):
+class LicitaCreate(LoginRequiredMixin, CreateView):
     model = Licitacao
     fields = [
         'id_conlicitacao', 'orgao_uasg', 'orgao_endereco',
@@ -49,7 +50,7 @@ class LicitaCreate(CreateView):
         return HttpResponse(bidding)
 
 
-class LicitaUpdate(UpdateView):
+class LicitaUpdate(LoginRequiredMixin, UpdateView):
     model = Licitacao
     fields = [
         'id_conlicitacao', 'orgao_uasg', 'orgao_endereco',
@@ -69,12 +70,12 @@ class LicitaUpdate(UpdateView):
         return reverse_lazy('licita_detail', kwargs={'pk': self.object.id})
 
 
-class LicitaDelete(DeleteView):
+class LicitaDelete(LoginRequiredMixin, DeleteView):
     model = Licitacao
     success_url = reverse_lazy('licita_list')
 
 
-class EmpresaImport(CreateView):
+class EmpresaImport(LoginRequiredMixin, CreateView):
     model = Empresa
     fields = ['cnpj']
 

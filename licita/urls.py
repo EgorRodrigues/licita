@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
+from django.contrib.auth import views as auth_views
 
 from conlicita_app import urls as conlicita_urls
 
@@ -27,4 +28,6 @@ from conlicita_app import urls as conlicita_urls
 urlpatterns = [
     path('', include(conlicita_urls)),
     path('admin/', admin.site.urls),
+    path('login/', auth_views.LoginView.as_view(), name='login'),
+path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 ]

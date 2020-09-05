@@ -57,8 +57,7 @@ ROOT_URLCONF = 'licita.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,3 +131,6 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'arquivos')
 MEDIA_URL = '/arquivos/'
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = 'licita_list'

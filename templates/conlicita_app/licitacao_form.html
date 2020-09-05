@@ -4,6 +4,8 @@
 <form action="" method="post" enctype="multipart/form-data" class="post-form">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Save">
-    <input type="button" onclick="location.href='{% url 'licita_detail' object.id %}'" value="voltar">
+    {% if form.id %}
+        <input type="button" onclick="location.href='{% url 'licita_detail' object.id %}'" value="voltar">
+    {% endif %}
 </form>
 {% endblock %}
