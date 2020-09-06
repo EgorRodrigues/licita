@@ -12,6 +12,9 @@
     <div class="container">
         <div class="col -12 d-flex flex-row-reverse">
             <a class="btn btn-outline-danger" href="{% url 'logout' %}" type="button">Sair</a>
+            <a class="btn btn-outline-info" href="{% url 'licita_import' %}" type="button">Importar</a>
+            <a class="btn btn-outline-dark" href="{% url 'licita_create' %}" type="button">Inserir</a>
+            <a class="btn btn-outline-primary" href="{% url 'licita_list' %}" type="button">Voltar</a>
         </div>
         {% block content %}
         {% endblock %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from django.http import HttpResponse
 from django.views.generic.list import ListView
@@ -45,9 +45,9 @@ class LicitaCreate(LoginRequiredMixin, CreateView):
         'arquivo_edital',
     ]
 
-    def post(self, request, *args, **kwargs):
-        bidding = importar_licitacoes(request.POST['id_conlicitacao'].split())
-        return HttpResponse(bidding)
+    def get_success_url(self):
+        bid = Licitacao.objects.get(id_conlicitacao=self.request.POST['id_conlicitacao'])
+        return reverse_lazy('licita_detail', kwargs={'pk': bid.id})
 
 
 class LicitaUpdate(LoginRequiredMixin, UpdateView):
@@ -73,6 +73,18 @@ class LicitaUpdate(LoginRequiredMixin, UpdateView):
 class LicitaDelete(LoginRequiredMixin, DeleteView):
     model = Licitacao
     success_url = reverse_lazy('licita_list')
+
+
+class LicitaImport(LoginRequiredMixin, CreateView):
+    model = Licitacao
+    fields = [
+        'id_conlicitacao',
+    ]
+
+    def post(self, request, *args, **kwargs):
+        importar_licitacoes(self.request.POST['id_conlicitacao'].split())
+        bid = Licitacao.objects.get(id_conlicitacao=request.POST['id_conlicitacao']).id
+        return redirect(f'../detail/{bid}')
 
 
 class EmpresaImport(LoginRequiredMixin, CreateView):

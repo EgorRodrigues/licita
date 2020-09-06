@@ -12,6 +12,7 @@ urlpatterns = [
     path('licita/relatorio/', views.Relatorio.as_view()),
     path('licita/list/', views.LicitaList.as_view(), name='licita_list'),
     path('licita/create/', views.LicitaCreate.as_view(), name='licita_create'),
+    path('licita/import/', views.LicitaImport.as_view(), name='licita_import'),
     path('licita/update/<int:pk>', views.LicitaUpdate.as_view(), name='licita_update'),
     path('licita/detail/<int:pk>', views.LicitaDetail.as_view(), name='licita_detail'),
     path('licita/delete/<int:pk>', views.LicitaDelete.as_view(), name='licita_delete'),
