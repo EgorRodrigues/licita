@@ -48,11 +48,14 @@
                     </div>
                 </div>
                 <hr>
-{#                <a class="btn btn-outline-primary" href="{% url 'licita_update' bid.id %}" type="button">Editar</a>#}
+                <a class="btn btn-outline-primary" href="{% url 'empresa_select' %}" type="button">Adicionar</a>
                 <a class="btn btn-outline-danger" href="{% url 'empresalicita_delete' bid.id %}" type="button">Retirar da Lista</a>
                 <a class="btn btn-outline-success" href="{% url 'licita_detail'  bid.licitacao.id %}" type="button">Abrir</a>
             </div>
         </div>
         <br>
     {% endfor %}
+    {% if not object_list %}
+        <a class="btn btn-outline-primary" href="{% url 'empresa_select' %}" type="button">Adicionar</a>
+    {% endif %}
 {% endblock %}

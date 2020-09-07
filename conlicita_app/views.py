@@ -103,12 +103,18 @@ class EmpresaList(LoginRequiredMixin, ListView):
 class EmpresaLicitaSelect(LoginRequiredMixin, CreateView):
     model = EmpresaLicita
     fields = ['licitacao', 'empresa']
-    success_url = reverse_lazy('empresa_select')
+
+    def get_success_url(self):
+        empresa = self.request.POST['empresa']
+        return reverse_lazy('minhas_licitacoes', kwargs={'pk': empresa})
 
 
 class EmpresaLicitaDelete(LoginRequiredMixin, DeleteView):
     model = EmpresaLicita
-    success_url = reverse_lazy('empresa_select')
+
+    def get_success_url(self):
+        empresa = self.object.empresa.id
+        return reverse_lazy('minhas_licitacoes', kwargs={'pk': str(empresa)})
 
 
 class EmpresaDetail(LoginRequiredMixin, DetailView):
