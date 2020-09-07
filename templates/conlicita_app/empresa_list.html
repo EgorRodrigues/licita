@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for empresa in object_list %}
+        <div class="card-body row">
+            <div class="col-4">
+                <dl>
+                    <dt>Razão Social</dt>
+                    <dd>{{ empresa.razao_social }}</dd>
+                </dl>
+            </div>
+            <div class="col-4">
+                <dl>
+                    <dt>CNPJ</dt>
+                    <dd>{{ empresa.cnpj }}</dd>
+                </dl>
+            </div>
+            <a class="col-12" href="{% url 'minhas_licitacoes' empresa.id %}">Ver Licitações</a>
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}

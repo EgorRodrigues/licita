@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="" method="post">{% csrf_token %}
+        <p>Tem certeza que deseja deletar "{{ object }}"?</p>
+        <input type="submit" value="Ok">
+        <input type="button" onclick="location.href='{% url 'empresa_select' %}'" value="Voltar">
+    </form>
+
+{% endblock %}

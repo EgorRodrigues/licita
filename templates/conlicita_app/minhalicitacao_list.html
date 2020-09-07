@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for bid in object_list %}
+        <div class="col-12">
+            <div class="card-header text-center">
+                <a class="btn" href="{% url 'licita_detail' bid.licitacao_id %}">{{ bid }}</a>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class=" col-2  ">
+                        <dl>
+                            <dt>Modalidade</dt>
+                            <dd>{{ bid.licitacao.modality }}</dd>
+                        </dl>
+                    </div>
+                    <div class="col-2">
+                        <dl>
+                            <dt>Nº Edital</dt>
+                            <dd>{{bid.licitacao.edital}}</dd>
+                        </dl>
+                    </div>
+                    <div class="col-3">
+                        <dl>
+                            <dt>Data do Certame</dt>
+                            <dd>{{ bid.licitacao.data_validade }}</dd>
+                        </dl>
+                    </div>
+                    <div class="col-3">
+                        <dl>
+                            <dt>Orgão</dt>
+                            <dd>{{ bid.licitacao.public_body }}</dd>
+                        </dl>
+                    </div>
+                    {% if bid.arquivo_edital %}
+                    <div class="col-2">
+                        <dl>
+                            <dt>Edital</dt>
+                            <dd><a href="/arquivos/{{ bid.licitacao.arquivo_edital }}">Edital</a></dd>
+                        </dl>
+                    </div>
+                    {% endif %}
+                    <div class="col-12">
+                        <dl>
+                            <dt>Objeto</dt>
+                            <dd>{{bid.licitacao.objeto}}</dd>
+                        </dl>
+                    </div>
+                </div>
+                <hr>
+{#                <a class="btn btn-outline-primary" href="{% url 'licita_update' bid.id %}" type="button">Editar</a>#}
+                <a class="btn btn-outline-danger" href="{% url 'empresalicita_delete' bid.id %}" type="button">Retirar da Lista</a>
+                <a class="btn btn-outline-success" href="{% url 'licita_detail'  bid.licitacao.id %}" type="button">Abrir</a>
+            </div>
+        </div>
+        <br>
+    {% endfor %}
+{% endblock %}

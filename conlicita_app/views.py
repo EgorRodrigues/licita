@@ -15,7 +15,7 @@ from funcoes.script_py.scripts import importar_licitacoes, importar_empresas
 class Relatorio(View):
     def get(self, request, *args, **kwargs):
         lista = Licitacao.objects.all()
-        return render(request, 'budgets.html', {'Nome': lista})
+        return render(request, 'conlicita_app/budgets.html', {'licitacoes': lista})
 
     def post(self, request, *args, **kwargs):
         return HttpResponse('Deu Certo!')
@@ -94,3 +94,30 @@ class EmpresaImport(LoginRequiredMixin, CreateView):
     def post(self, request, *args, **kwargs):
         empresa = importar_empresas(request.POST['cnpj'].split())
         return HttpResponse(empresa)
+
+
+class EmpresaList(LoginRequiredMixin, ListView):
+    model = Empresa
+
+
+class EmpresaLicitaSelect(LoginRequiredMixin, CreateView):
+    model = EmpresaLicita
+    fields = ['licitacao', 'empresa']
+    success_url = reverse_lazy('empresa_select')
+
+
+class EmpresaLicitaDelete(LoginRequiredMixin, DeleteView):
+    model = EmpresaLicita
+    success_url = reverse_lazy('empresa_select')
+
+
+class EmpresaDetail(LoginRequiredMixin, DetailView):
+    model = Empresa
+
+
+class Minhaslicitacoes(LoginRequiredMixin, View):
+    def get(self, request, pk):
+        empresa = Empresa.objects.get(id=pk)
+        my_bidding = empresa.licitacao_empresa.all()
+        # my_bidding = empresa.my_bidding.all()
+        return render(request, 'conlicita_app/minhalicitacao_list.html', {'object_list': my_bidding})

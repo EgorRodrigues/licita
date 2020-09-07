@@ -26,8 +26,9 @@ from conlicita_app import urls as conlicita_urls
 
 
 urlpatterns = [
-    path('', include(conlicita_urls)),
+    path('', auth_views.LoginView.as_view()),
+    path('licita/', include(conlicita_urls)),
     path('admin/', admin.site.urls),
     path('login/', auth_views.LoginView.as_view(), name='login'),
-path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 ]

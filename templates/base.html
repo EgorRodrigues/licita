@@ -14,7 +14,8 @@
             <a class="btn btn-outline-danger" href="{% url 'logout' %}" type="button">Sair</a>
             <a class="btn btn-outline-info" href="{% url 'licita_import' %}" type="button">Importar</a>
             <a class="btn btn-outline-dark" href="{% url 'licita_create' %}" type="button">Inserir</a>
-            <a class="btn btn-outline-primary" href="{% url 'licita_list' %}" type="button">Voltar</a>
+            <a class="btn btn-outline-primary" href="{% url 'licita_list' %}" type="button">Inicio</a>
+            <a class="btn btn-outline-primary" href="{% url 'empresa_list' %}" type="button">Empresas</a>
         </div>
         {% block content %}
         {% endblock %}
