@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.shortcuts import render, redirect
 from django.views import View
 from django.http import HttpResponse
@@ -102,7 +103,11 @@ class EmpresaList(LoginRequiredMixin, ListView):
 
 class EmpresaLicitaSelect(LoginRequiredMixin, CreateView):
     model = EmpresaLicita
-    fields = ['licitacao', 'empresa']
+    fields = [
+        'licitacao', 'empresa', 'observacao','visita_tecnica', 'garantia_proposta',
+        'qualificacao_tecnica', 'consorcio', 'cadastro', 'orcamento_data_base',
+        'prazo_execucao', 'status',
+    ]
 
     def get_success_url(self):
         empresa = self.request.POST['empresa']
@@ -127,3 +132,37 @@ class Minhaslicitacoes(LoginRequiredMixin, View):
         my_bidding = empresa.licitacao_empresa.all()
         # my_bidding = empresa.my_bidding.all()
         return render(request, 'conlicita_app/minhalicitacao_list.html', {'object_list': my_bidding})
+
+
+class EmpresaLicitaList(LoginRequiredMixin, View):
+    def get(self):
+        pass
+
+    def post(self, request, *args, **kwargs):
+        bidding = dict(request.POST)
+        for key in bidding.keys():
+            if bidding[key][0] == 'unknown':
+                bidding[key] = None
+            elif bidding[key][0] == 'true':
+                bidding[key] = True
+            elif bidding[key][0] == 'false':
+                bidding[key] = False
+        if not bidding['orcamento_data_base'][0]:
+            bidding['orcamento_data_base'] = None
+        else:
+            bidding['orcamento_data_base'] = datetime.strptime(bidding['orcamento_data_base'][0], '%d/%m/%Y')
+        EmpresaLicita(
+            licitacao=Licitacao.objects.get(pk=bidding['licitacao'][0]),
+            empresa=Empresa.objects.get(pk=bidding['empresa'][0]),
+            observacao=bidding['observacao'][0],
+            visita_tecnica=bidding['visita_tecnica'], # Boolean
+            garantia_proposta=bidding['garantia_proposta'], # Boolean
+            qualificacao_tecnica=bidding['qualificacao_tecnica'], # Boolean
+            consorcio=bidding['consorcio'], # Boolean
+            cadastro=bidding['cadastro'], # Boolean
+            orcamento_data_base=bidding['orcamento_data_base'],
+            prazo_execucao=bidding['prazo_execucao'][0],
+            status=bidding['status'][0]
+        ).save()
+
+        return redirect(f"../minhas/licitacoes/{bidding['empresa'][0]}")

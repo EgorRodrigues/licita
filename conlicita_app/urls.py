@@ -23,6 +23,7 @@ urlpatterns = [
     path('empresa/licita/delete/<int:pk>', views.EmpresaLicitaDelete.as_view(), name='empresalicita_delete'),
     path('empresa/select/', views.EmpresaLicitaSelect.as_view(), name='empresa_select'),
     path('minhas/licitacoes/<int:pk>', views.Minhaslicitacoes.as_view(), name='minhas_licitacoes'),
+    path('licitacoes/list', views.EmpresaLicitaList.as_view(), name='lista_de_licitacoes'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # if settings.DEBUG:
