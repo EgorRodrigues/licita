@@ -7,8 +7,9 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import User
 
-from .models import Licitacao, Empresa, EmpresaLicita
+from .models import Licitacao, Empresa, EmpresaLicita, UserEmpresa
 
 from funcoes.script_py.scripts import importar_licitacoes, importar_empresas
 
@@ -130,13 +131,14 @@ class Minhaslicitacoes(LoginRequiredMixin, View):
     def get(self, request, pk):
         empresa = Empresa.objects.get(id=pk)
         my_bidding = empresa.licitacao_empresa.all()
-        # my_bidding = empresa.my_bidding.all()
         return render(request, 'conlicita_app/minhalicitacao_list.html', {'object_list': my_bidding})
 
 
 class EmpresaLicitaList(LoginRequiredMixin, View):
-    def get(self):
-        pass
+    def get(self, request):
+        user = User.objects.get(username=request.user)
+        empresa = user.user_empresa.empresa
+        return HttpResponse(empresa)
 
     def post(self, request, *args, **kwargs):
         bidding = dict(request.POST)
@@ -166,3 +168,5 @@ class EmpresaLicitaList(LoginRequiredMixin, View):
         ).save()
 
         return redirect(f"../minhas/licitacoes/{bidding['empresa'][0]}")
+
+

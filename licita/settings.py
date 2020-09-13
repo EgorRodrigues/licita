@@ -102,6 +102,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'conlicita_app.backends.EmailOrUsername'
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
@@ -133,4 +136,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'arquivos')
 MEDIA_URL = '/arquivos/'
 
 LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = 'licita_list'
+LOGIN_REDIRECT_URL = 'minhas_licitacoes'

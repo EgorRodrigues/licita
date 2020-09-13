@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # todo Inserir os campos multiplos
@@ -104,3 +105,9 @@ class EmpresaLicita(models.Model):
 
     def __str__(self):
         return f'{self.licitacao.edital} - {self.licitacao.orgao_cidade} - {self.observacao}'
+
+
+class UserEmpresa(models.Model):
+    user = models.OneToOneField(User, related_name='user_empresa', on_delete=models.CASCADE)
+    empresa = models.ForeignKey(Empresa, related_name='user_empresa', on_delete=models.CASCADE)
+

@@ -112,6 +112,7 @@ def importar_licitacoes(lista):
         ).save()
     return certames
 
+
 def buscar_cnpj(cnpjota):
     driver.find_element_by_id('cnpj').clear()
     driver.find_element_by_id('cnpj').send_keys(cnpjota)

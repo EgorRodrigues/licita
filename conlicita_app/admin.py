@@ -1,5 +1,6 @@
+from django.contrib.auth.models import User, Group
 from django.contrib import admin
-from conlicita_app.models import Licitacao, Empresa, EmpresaLicita
+from conlicita_app.models import Licitacao, Empresa, EmpresaLicita, UserEmpresa
 
 
 class LicitacaoAdmin(admin.ModelAdmin):
@@ -27,3 +28,6 @@ class LicitaEmpresaAdmin(admin.ModelAdmin):
 admin.site.register(Licitacao, LicitacaoAdmin)
 admin.site.register(Empresa)
 admin.site.register(EmpresaLicita, LicitaEmpresaAdmin)
+admin.site.register(UserEmpresa)
+# admin.site.unregister(User)
+# admin.site.unregister(Group)
