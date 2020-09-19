@@ -9,8 +9,7 @@ from django.views.static import serve
 from . import views
 
 urlpatterns = [
-    path('', views.Relatorio.as_view(), name='home'),
-    path('relatorio/', views.Relatorio.as_view()),
+    path('', views.Home.as_view(), name='home'),
     path('list/', views.LicitaList.as_view(), name='licita_list'),
     path('create/', views.LicitaCreate.as_view(), name='licita_create'),
     path('import/', views.LicitaImport.as_view(), name='licita_import'),

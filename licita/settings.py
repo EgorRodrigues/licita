@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 
     'conlicita_app',
+    'layout_app',
 ]
 
 MIDDLEWARE = [

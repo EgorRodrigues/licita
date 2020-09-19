@@ -14,13 +14,9 @@ from .models import Licitacao, Empresa, EmpresaLicita, UserEmpresa
 from funcoes.script_py.scripts import importar_licitacoes, importar_empresas
 
 
-class Relatorio(View):
-    def get(self, request, *args, **kwargs):
-        lista = Licitacao.objects.all()
-        return render(request, 'conlicita_app/budgets.html', {'licitacoes': lista})
-
-    def post(self, request, *args, **kwargs):
-        return HttpResponse('Deu Certo!')
+class Home(LoginRequiredMixin, View):
+    def get(self, request):
+        return render(request, 'conlicita_app/home.html')
 
 
 class LicitaList(LoginRequiredMixin, ListView):
@@ -169,4 +165,20 @@ class EmpresaLicitaList(LoginRequiredMixin, View):
 
         return redirect(f"../minhas/licitacoes/{bidding['empresa'][0]}")
 
+
+class LicitaSelect(LoginRequiredMixin, View):
+
+    def get(self):
+        pass
+
+    def post(self, request):
+        user = User.objects.get(username=request.user)
+        empresa = user.user_empresa.empresa
+        licitacao = request
+        EmpresaLicita(
+            licitacao=licitacao,
+            empresa=empresa,
+        ).save()
+
+        return redirect('')
 

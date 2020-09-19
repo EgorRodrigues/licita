@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{#    <button onclick="print()">Imprimir</button>#}
+    <div class="row mt-5">
+        <div class="col-sm">
+            <h3>Composições De Custo Unitario - CCU</h3>
+            <p class="lead">Objeto: Execucao da obra de construcao do sistema de coleta e tratamento de esgoto sanitário da cidade de Ingá-PB.. </p>
+            <p class="lead"> CONCORRENCIA 01/2020 <br> PROCESSO ADMINISTRATIVO: 046/2020</p>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-sm">
+            {% for c in composicoes %}
+                <table class="table table-sm">
+                    <thead class="table-active">
+{#                        <th class="align-middle" scope="col">{{ c.fonte}}</th>#}
+                        <th class="align-middle" scope="col">{{ c.codigo}}</th>
+                        <th class="align-middle" scope="col" colspan="5">{{ c.descricao }}</th>
+                        <th class="text-center align-middle" scope="col">{{ c.unidade }}</th>
+                    </thead>
+                    <thead>
+{#                        <th class="text-center align-middle" scope="col">FONTE</th>#}
+                        <th class="text-center align-middle" scope="col">CÓDIGO</th>
+                        <th class="text-center align-middle" scope="col">TIPO</th>
+                        <th class="text-center align-middle" scope="col">DESCRIÇÃO</th>
+                        <th class="text-center align-middle" scope="col">UNID.</th>
+                        <th class="text-center align-middle" scope="col">QUANT.</th>
+                        <th class="text-center align-middle" scope="col">PREÇO UNIT.</th>
+                        <th class="text-center align-middle" scope="col">VALOR TOTAL</th>
+                    </thead>
+                    <tbody class="table-bordered">
+                        {% for i in c.itens %}
+                            <tr>
+{#                                <td class="text-center align-middle" >{{ i.fonte_item }}</td>#}
+                                <td class="text-center align-middle">{{ i.codigo_item }}</td>
+                                <td class="text-center align-middle">{{ i.tipo_item }}</td>
+                                <td class="align-middle">{{ i.descricao_item }}</td>
+                                <td class="text-center align-middle">{{ i.unidade_item }}</td>
+                                <td class="text-right align-middle">{{ i.quantidade_item|floatformat:6 }}</td>
+                                <td class="text-right align-middle">{{ i.preco_unitario_item|floatformat:3 }}</td>
+                                <td class="text-right align-middle">{{ i.preco_total_item|floatformat:3 }}</td>
+                            </tr>
+                        {% endfor %}
+                        <tr>
+                            <td colspan="6"><span class="d-flex justify-content-end font-weight-bold">TOTAL CUSTO:</span></td>
+                            <td class="text-right align-middle" >{{ c.custo_total|floatformat:2 }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-sm">
+                    <thead>
+                        <th class="text-center align-middle">Mão de Obra</th>
+                        <th class="text-center align-middle">Material</th>
+                        <th class="text-center align-middle">Equipamento</th>
+                    </thead>
+                    <tr>
+                        <td class="text-center align-middle">{{ c.mao_de_obra|floatformat:2 }}</td>
+                        <td class="text-center align-middle">{{ c.material|floatformat:2 }}</td>
+                        <td class="text-center align-middle">{{ c.equipamento|floatformat:2 }}</td>
+                    </tr>
+                </table>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

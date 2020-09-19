@@ -22,12 +22,14 @@ from django.conf.urls import include
 from django.contrib.auth import views as auth_views
 
 from conlicita_app import urls as conlicita_urls
+from layout_app import urls as layout_urls
 
 
 
 urlpatterns = [
     path('', auth_views.LoginView.as_view()),
     path('licita/', include(conlicita_urls)),
+    path('layout/', include(layout_urls)),
     path('admin/', admin.site.urls),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
