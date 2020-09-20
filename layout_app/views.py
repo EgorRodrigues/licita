@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 import pandas as pd
 from tqdm import tqdm
+from json import dump, dumps
+
 
 def lista_de_servicos():
     df = pd.read_excel('D:/Projetos/LayoutCPU/LayoutCPU/static/proposta_inga_cheia.xlsx', sheet_name='Composicoes')
@@ -11,9 +13,9 @@ def lista_de_servicos():
     sinapi = pd.DataFrame({
         # 'FONTE': [],
         'CODIGO DA COMPOSICAO': [],
-        'DESCRICAO DA COMPOSICAO':[],
-        'UNIDADE':[],
-        'CUSTO TOTAL':[],
+        'DESCRICAO DA COMPOSICAO': [],
+        'UNIDADE': [],
+        'CUSTO TOTAL': [],
         'TIPO ITEM': [],
         'FONTE ITEM': [],
         'CODIGO ITEM': [],
@@ -21,8 +23,8 @@ def lista_de_servicos():
         'UNIDADE ITEM': [],
         'COEFICIENTE': [],
         'PRECO UNITARIO': [],
-        'CUSTO TOTAL ITEM':[],
-        })
+        'CUSTO TOTAL ITEM': [],
+    })
     for index, row in tqdm(filtro.iterrows(), total=len(filtro)):
         codigo = row['CODIGO']
         composicao = df[(df['CODIGO DA COMPOSICAO'] == codigo)]
@@ -67,3 +69,50 @@ def budgets(request):
         })
 
     return render(request, 'layout_app/budgets.html', {'composicoes': composicoes})
+
+
+def carregar_composicao():
+    composicoes = pd.read_excel('D:/Projetos/LayoutCPU/LayoutCPU/static/proposta_inga_cheia.xlsx', sheet_name='Composicoes')
+    try:
+        composicoes = composicoes.drop(['DESCRICAO DA CLASSE', 'SIGLA DA CLASSE',
+                                        'DESCRICAO DO TIPO 1', 'SIGLA DO TIPO 1', 'CODIGO DO AGRUPADOR',
+                                        'DESCRICAO DO AGRUPADOR', 'ORIGEM DE PREÇO', 'ORIGEM DE PREÇO ITEM',
+                                        '% ATRIBUÍDO SÃO PAULO', 'CUSTO MAO DE OBRA', '% MAO DE OBRA', 'CUSTO MATERIAL',
+                                        '% MATERIAL','CUSTO EQUIPAMENTO', '% EQUIPAMENTO', 'CUSTO SERVICOS TERCEIROS',
+                                        '% SERVICOS TERCEIROS', 'CUSTO OUTROS', '% OUTROS', 'VINCULO'], axis=1)
+    except:
+        pass
+
+    serv = composicoes.drop_duplicates('CODIGO DA COMPOSICAO')
+    serv = serv.drop(['TIPO ITEM', 'CODIGO ITEM', 'DESCRIÇÃO ITEM', 'UNIDADE ITEM',
+                      'COEFICIENTE', 'PRECO UNITARIO', 'CUSTO TOTAL ITEM'], axis=1)
+
+    composicao_all = []
+    for c in serv.to_dict('records'):
+        comp = composicoes[composicoes['CODIGO DA COMPOSICAO'] == c['CODIGO DA COMPOSICAO']]
+        comp = comp.drop(['CODIGO DA COMPOSICAO', 'DESCRICAO DA COMPOSICAO', 'UNIDADE', 'CUSTO TOTAL'], axis=1)
+        c['ITENS'] = comp.to_dict('records')
+        composicao_all.append(c)
+
+    # return composicoes.to_dict('records')
+    return composicao_all
+
+
+def decomposicao_insumos(lista_servicos):
+    pass
+
+
+def decomposicao(lista_servicos, lista_insumos=None, lista_tratamento=None):
+    if lista_insumos is None:
+        lista_insumos = decomposicao_insumos(lista_servicos)
+
+
+    if lista_tratamento is None:
+        lista_tratamento =
+
+    if lista_tratamento:
+        pass
+
+
+def decomposicao_sintetica():
+    pass
