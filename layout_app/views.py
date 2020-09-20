@@ -115,4 +115,34 @@ def decomposicao(lista_servicos, lista_insumos=None, lista_tratamento=None):
 
 
 def decomposicao_sintetica():
-    pass
+    lista_excel = pd.read_excel('D:/Projetos/LayoutCPU/LayoutCPU/static/proposta_inga_cheia.xlsx', sheet_name='Lista')
+    lista = lista_excel['CODIGO'].to_list()
+
+    selecao = []
+    lista_sel = []
+    for item in lista:
+        for composicao in composicao_all:
+            if (composicao['CODIGO DA COMPOSICAO']) == item:
+                selecao.append(composicao)
+                lista_sel.append(item)
+
+    lista_composicoes = []
+    for comp in selecao:
+        for item in comp['ITENS']:
+            if item['TIPO ITEM'] == 'COMPOSICAO':
+                lista_composicoes.append(item['CODIGO ITEM'])
+
+    lista = set(set(lista_composicoes) | set(lista_sel))
+
+    print(f'Composições: {len(composicao_all)}',
+          f'Lista: {len(lista)}',
+          f'Selecao: {len(selecao)}',
+          f'Lista Seleção: {len(lista_sel)}'
+          )
+
+    with open('D:/Projetos/json/selecao.json', 'w', encoding='UTF-8') as arq:
+        dump(selecao, arq, indent=4, ensure_ascii=False, separators=(',', ': '))
+
+    orcamento = composicoes.loc[composicoes['CODIGO DA COMPOSICAO'].isin(lista)]
+
+    orcamento.to_excel('D:/Projetos/json/orcamento.xlsx')
