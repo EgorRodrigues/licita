@@ -22,14 +22,23 @@ essas licitaçõe serão cadastradas no banco de dados para avaliação
     * Listagem das licitações que irão participar (Licitações escolhidas e aprovadas para participação, nessas haverá compos para upload de documentos de participação)
     
 
-#### 1º Passo:
+<hr>
 
-* Capturar as informações das licitações e criar um Json para porteriomente popular o banco de dados e 
+## Proxima Etapa
 
-#### 2º Passo:
+Unificação dos projetos de Licitação e Orçamentação:
 
-* Criar os models para armazenar as informações, e organizar as empresas
+* 1 Passo:
+    * Coletar a lista orçamentaria contendo todos os serviços e insumos com suas respectivas quantidades
+    (não se faz necessario nesse primeiro momento precificar os insumos)
+    
+* 2 Passo:
+    * Separar os Insumos e listar os Serviços
 
-### 3º Passo:
+* 3 Passo:
+    * Pagar cada Serviço e abrir a composição, separando Insumos e serviços
 
-* Criar o relacinamento entre as empresas e as licitações, e criar o painel de configuração das licitações.
+* 4 Passo:
+    Criar um laço que a cada iteração, multiplique a quantidade do serviço pelo coeficiente dos insumos e serviços de dentro de sua composição
+    
+ 
