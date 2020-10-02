@@ -15,7 +15,7 @@ from conlicita_app.models import Empresa
 
 option = Options()
 option.headless = True
-driver = webdriver.Chrome(options=option)
+#driver = webdriver.Chrome(options=option)
 
 
 def login_conlicitacao(login, senha):

@@ -1,6 +1,6 @@
 /venv
+/data
 db.sqlite3
-manage.py
 .env
 
 # pycharm
