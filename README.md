@@ -41,4 +41,7 @@ Unificação dos projetos de Licitação e Orçamentação:
 * 4 Passo:
     Criar um laço que a cada iteração, multiplique a quantidade do serviço pelo coeficiente dos insumos e serviços de dentro de sua composição
     
- 
+ ### Sugestão de .env
+ * SECRET_KEY= (rodar o comando: python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())')
+ * DEBUG=True 
+ * 

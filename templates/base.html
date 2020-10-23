@@ -10,12 +10,12 @@
 </head>
 <body>
     <div class="container">
-        <div class="col -12 d-flex flex-row-reverse">
-            <a class="btn btn-outline-danger" href="{% url 'logout' %}" type="button">Sair</a>
-            <a class="btn btn-outline-info" href="{% url 'licita_import' %}" type="button">Importar Licitação</a>
-            <a class="btn btn-outline-primary" href="{% url 'empresa_import' %}" type="button">Importar Empresas</a>
-            <a class="btn btn-outline-primary" href="{% url 'home' %}" type="button">Inicio</a>
-        </div>
+{#        <div class="col -12 d-flex flex-row-reverse">#}
+{#            <a class="btn btn-outline-danger" href="{% url 'logout' %}" type="button">Sair</a>#}
+{#            <a class="btn btn-outline-info" href="{% url 'licita_import' %}" type="button">Importar Licitação</a>#}
+{#            <a class="btn btn-outline-primary" href="{% url 'empresa_import' %}" type="button">Importar Empresas</a>#}
+{#            <a class="btn btn-outline-primary" href="{% url 'home' %}" type="button">Inicio</a>#}
+{#        </div>#}
         {% block content %}
         {% endblock %}
     </div>

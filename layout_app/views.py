@@ -6,8 +6,8 @@ from json import dump, dumps
 
 
 def lista_de_servicos():
-    df = pd.read_excel('D:/Projetos/LayoutCPU/LayoutCPU/static/proposta_inga_cheia.xlsx', sheet_name='Composicoes')
-    filtro = pd.read_excel('D:/Projetos/LayoutCPU/LayoutCPU/static/proposta_inga_cheia.xlsx', sheet_name='Lista')
+    df = pd.read_excel('/home/egor/Downloads/propostarev2.xlsx', sheet_name='Composicoes')
+    filtro = pd.read_excel('/home/egor/Downloads/propostarev2.xlsx', sheet_name='Lista')
     # filtro = filtro[(filtro['FONTE'] == 'SINAPI')]
 
     sinapi = pd.DataFrame({
@@ -103,7 +103,7 @@ def decomposicao_insumos(lista_servicos):
 
 
 def decomposicao(itens_orcamento, lista_insumos=None, lista_tratamento=None):
-    li =
+    li = lista_insumos
     if lista_insumos is None:
         lista_insumos = decomposicao_insumos(lista_servicos)
 
